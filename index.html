@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Public Voices</title>
+<meta name="description" content="Public Voices is a public speaking and speech & debate program for students who have something to say.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #edeef6;
+    --surface: #ffffff;
+    --ink: #17163a;
+    --muted: #55567a;
+    --line: #d2d3e6;
+    --cobalt: #2b3fe0;
+    --on-cobalt: #ffffff;
+    --card: #ffce3a;
+    --on-card: #17163a;
+    --stop: #d8352d;
+    --hatch: rgba(23, 22, 58, .22);
+    --display: "Anybody", "Arial Narrow", Impact, sans-serif;
+    --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    --mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --wrap: 1180px;
+    --gutter: clamp(16px, 4vw, 40px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0e0f2a;
+      --surface: #17193d;
+      --ink: #ecebff;
+      --muted: #a4a5ca;
+      --line: #2d2f5e;
+      --cobalt: #8391ff;
+      --on-cobalt: #0e0f2a;
+      --stop: #ff6b63;
+      --hatch: rgba(236, 235, 255, .25);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0e0f2a;
+    --surface: #17193d;
+    --ink: #ecebff;
+    --muted: #a4a5ca;
+    --line: #2d2f5e;
+    --cobalt: #8391ff;
+    --on-cobalt: #0e0f2a;
+    --stop: #ff6b63;
+    --hatch: rgba(236, 235, 255, .25);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  img { max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+  .label {
+    font: 500 12px/1.2 var(--mono);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .h2 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-variation-settings: "wdth" 70;
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    line-height: .95;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+  }
+  .lede { color: var(--muted); max-width: 60ch; font-size: 1.08rem; }
+  section { padding-block: clamp(64px, 10vw, 120px); }
+  .section-head { display: grid; gap: 16px; margin-bottom: clamp(32px, 5vw, 56px); }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+  .mark {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 80;
+    text-transform: uppercase; letter-spacing: .02em; text-decoration: none; font-size: 18px;
+  }
+  .mark-bars { display: flex; align-items: center; gap: 2px; height: 20px; }
+  .mark-bars i { display: block; width: 3px; border-radius: 2px; background: var(--cobalt); }
+  .nav ul { display: flex; gap: clamp(12px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0; }
+  .nav ul a { text-decoration: none; font-size: 15px; color: var(--muted); }
+  .nav ul a:hover { color: var(--ink); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 20px; border-radius: 999px; border: 2px solid var(--ink);
+    font: 700 15px/1 var(--body); text-decoration: none; cursor: pointer;
+    background: transparent; color: var(--ink);
+    transition: transform .15s ease, background .15s ease, color .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.solid { background: var(--cobalt); border-color: var(--cobalt); color: var(--on-cobalt); }
+  .btn.small { padding: 9px 14px; font-size: 14px; }
+  @media (max-width: 720px) { .nav ul { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(40px, 7vw, 88px) clamp(56px, 8vw, 96px); }
+  .hero .label { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .hero .label span::before { content: "●"; color: var(--cobalt); margin-right: 8px; font-size: 9px; vertical-align: 2px; }
+  .voice {
+    font-family: var(--display);
+    text-transform: uppercase;
+    line-height: .82;
+    font-size: clamp(3.6rem, 15vw, 12.5rem);
+    margin-block: clamp(20px, 3vw, 32px);
+    user-select: none;
+    cursor: default;
+    touch-action: pan-y;
+  }
+  .voice .line { display: block; white-space: nowrap; }
+  .voice .line + .line { color: var(--cobalt); }
+  .voice .ch { display: inline-block; font-variation-settings: "wght" 700, "wdth" 100; will-change: font-variation-settings; }
+  .hero-foot { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 32px; align-items: end; }
+  .hero-foot .lede { color: var(--ink); font-size: clamp(1.1rem, 1.8vw, 1.35rem); line-height: 1.5; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+  .hint { margin-top: 18px; font: 400 13px/1.4 var(--mono); color: var(--muted); }
+  @media (max-width: 760px) {
+    .hero-foot { grid-template-columns: 1fr; }
+    .hero-actions { justify-content: flex-start; }
+  }
+
+  /* ---------- Marquee of resolutions ---------- */
+  .marquee {
+    border-block: 2px solid var(--ink);
+    background: var(--card); color: var(--on-card);
+    overflow: hidden; padding-block: 14px;
+  }
+  .marquee-track { display: flex; gap: 48px; width: max-content; animation: slide 60s linear infinite; }
+  .marquee-track span { font: 500 14px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+  .marquee-track span b { font-weight: 500; opacity: .6; margin-right: 10px; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  /* ---------- Events ---------- */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font: 500 13px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase;
+    padding: 10px 14px; border-radius: 999px; border: 1.5px solid var(--line);
+    background: transparent; color: var(--ink); cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .events-top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 16px; font: 400 13px/1 var(--mono); color: var(--muted); margin-top: 24px; }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+  .seg-s, .sw.s { background: var(--cobalt); }
+  .seg-x, .sw.x { background: var(--card); }
+  .seg-p, .sw.p { background: repeating-linear-gradient(135deg, var(--hatch) 0 3px, transparent 3px 7px); box-shadow: inset 0 0 0 1px var(--hatch); }
+  .events { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 20px; margin-top: 28px; }
+  .event {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 24px; display: grid; gap: 14px; align-content: start; min-width: 0;
+  }
+  .event-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; }
+  .event h3 {
+    font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75;
+    font-size: 1.7rem; line-height: 1; text-transform: uppercase;
+  }
+  .tag { font: 500 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .event p { color: var(--muted); font-size: 15.5px; }
+  .bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--bg); gap: 2px; }
+  .bar div { display: flex; align-items: center; justify-content: center; min-width: 0; font: 500 10px/1 var(--mono); overflow: hidden; }
+  .bar .seg-s { color: var(--on-cobalt); }
+  .bar .seg-x { color: var(--on-card); }
+  .bar .seg-p { color: var(--ink); }
+  .meta { display: flex; justify-content: space-between; gap: 12px; font: 400 12.5px/1.3 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .meta b { color: var(--ink); font-weight: 500; }
+  .footnote { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+  /* ---------- Practice room ---------- */
+  .practice { background: var(--ink); color: var(--bg); }
+  .practice .label, .practice .lede { color: color-mix(in srgb, var(--bg) 70%, var(--ink)); }
+  .room { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 20px; }
+  @media (max-width: 880px) { .room { grid-template-columns: 1fr; } }
+  .panel { border: 1.5px solid color-mix(in srgb, var(--bg) 22%, var(--ink)); border-radius: 22px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 20px; align-content: start; }
+  .panel h3 { font: 500 12px/1.2 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+  .prompt-box {
+    min-height: 190px; display: grid; align-content: center; gap: 14px;
+    background: var(--card); color: var(--on-card); border-radius: 14px; padding: 24px;
+    transform-origin: 50% 0;
+  }
+  .prompt-box.flip { animation: flip .5s ease; }
+  @keyframes flip { 0% { transform: rotateX(80deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .prompt-box.flip { animation: none; } }
+  .prompt-kind { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+  .prompt-text {
+    font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85;
+    font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.08;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .practice .btn { border-color: var(--bg); color: var(--bg); }
+  .practice .btn.solid { background: var(--card); border-color: var(--card); color: var(--on-card); }
+  .practice .chip { color: var(--bg); border-color: color-mix(in srgb, var(--bg) 30%, var(--ink)); }
+  .practice .chip[aria-pressed="true"] { background: var(--bg); color: var(--ink); border-color: var(--bg); }
+  .clock { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(16px, 3vw, 32px); align-items: center; }
+  @media (max-width: 520px) { .clock { grid-template-columns: 1fr; } }
+  .timecard {
+    width: clamp(120px, 20vw, 170px); aspect-ratio: 3 / 4; max-width: 100%;
+    background: var(--card); color: var(--on-card); border-radius: 12px;
+    display: grid; place-items: center; position: relative;
+    box-shadow: 0 18px 0 -8px color-mix(in srgb, var(--card) 45%, var(--ink));
+    transition: background .2s ease, color .2s ease;
+  }
+  .timecard::before { content: ""; position: absolute; top: 10px; width: 26px; height: 5px; border-radius: 3px; background: currentColor; opacity: .25; }
+  .timecard b { font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 60; font-size: clamp(4rem, 9vw, 6rem); line-height: 1; }
+  .timecard small { position: absolute; bottom: 12px; font: 500 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+  .timecard.stop { background: var(--stop); color: #fff; }
+  .timecard.pop { animation: pop .35s ease; }
+  @keyframes pop { 0% { transform: rotateY(90deg); } 100% { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .timecard.pop { animation: none; } }
+  .readout { display: grid; gap: 12px; }
+  .digits { font: 500 clamp(3rem, 8vw, 5.2rem)/1 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+  .digits.over { color: var(--stop); }
+  .status { font: 400 13px/1.4 var(--mono); color: color-mix(in srgb, var(--bg) 70%, var(--ink)); min-height: 1.4em; }
+  .progress { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--bg) 15%, var(--ink)); overflow: hidden; }
+  .progress i { display: block; height: 100%; width: 0; background: var(--card); }
+  kbd { font: 500 12px var(--mono); border: 1px solid currentColor; border-radius: 4px; padding: 1px 5px; }
+
+  /* ---------- Season ---------- */
+  .season { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+  .season li { padding: 22px 20px 0 0; display: grid; gap: 10px; align-content: start; position: relative; }
+  .season li::before { content: ""; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+  .season li:last-child::before { background: var(--cobalt); border-color: var(--cobalt); }
+  .season .when { font: 500 12px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--cobalt); }
+  .season h3 { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75; font-size: 1.45rem; line-height: 1.05; text-transform: uppercase; }
+  .season p { color: var(--muted); font-size: 15px; }
+  @media (max-width: 900px) {
+    .season { grid-template-columns: 1fr; border-top: 0; border-left: 2px solid var(--ink); gap: 28px; }
+    .season li { padding: 0 0 0 26px; }
+    .season li::before { top: 2px; left: -8px; }
+  }
+
+  /* ---------- Glossary ---------- */
+  .lingo { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 0 32px; margin: 0; }
+  .lingo div { padding-block: 18px; border-top: 1px solid var(--line); display: grid; gap: 6px; }
+  .lingo dt { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 80; font-size: 1.3rem; text-transform: uppercase; line-height: 1.1; }
+  .lingo dd { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+  /* ---------- Join ---------- */
+  .join { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(32px, 6vw, 72px); align-items: start; }
+  @media (max-width: 880px) { .join { grid-template-columns: 1fr; } }
+  .join .h2 { font-size: clamp(2.8rem, 8vw, 6rem); }
+  form { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 18px; }
+  .field { display: grid; gap: 6px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 520px) { .field-row { grid-template-columns: 1fr; } }
+  label, legend { font: 500 12px/1.2 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  input, select, textarea {
+    font: 400 16px/1.4 var(--body); color: var(--ink); background: var(--bg);
+    border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 14px; width: 100%;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--cobalt); }
+  fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .picks { display: flex; flex-wrap: wrap; gap: 8px; }
+  .picks label { text-transform: none; letter-spacing: 0; font: 400 14px/1 var(--body); color: var(--ink); cursor: pointer; }
+  .picks input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .picks span { display: inline-block; padding: 9px 13px; border-radius: 999px; border: 1.5px solid var(--line); }
+  .picks input:checked + span { background: var(--cobalt); border-color: var(--cobalt); color: var(--on-cobalt); }
+  .picks input:focus-visible + span { outline: 3px solid var(--cobalt); outline-offset: 2px; }
+  .error { color: var(--stop); font-size: 14px; }
+  .done { display: grid; gap: 10px; padding: 20px; border-radius: 14px; background: var(--card); color: var(--on-card); }
+  .done strong { font-family: var(--display); font-variation-settings: "wdth" 80; font-size: 1.6rem; text-transform: uppercase; line-height: 1.05; }
+
+  footer { border-top: 2px solid var(--ink); padding-block: 32px 48px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+  footer p { color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Public Voices home">
+      <span class="mark-bars" aria-hidden="true"><i style="height:8px"></i><i style="height:16px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:6px"></i></span>
+      Public Voices
+    </a>
+    <ul>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#practice">Practice Room</a></li>
+      <li><a href="#season">Season</a></li>
+      <li><a href="#lingo">Lingo</a></li>
+    </ul>
+    <a class="btn solid small" href="#join">Join</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero wrap">
+    <p class="label"><span>Public speaking</span><span>Speech</span><span>Debate</span><span>Interp</span></p>
+    <h1 class="voice" id="voice" aria-label="Public Voices">
+      <span class="line" aria-hidden="true">Public</span>
+      <span class="line" aria-hidden="true">Voices</span>
+    </h1>
+    <div class="hero-foot">
+      <p class="lede">A speech &amp; debate program for students who have something to say, and for the ones who haven't found it yet. We teach you to research it, argue it, perform it, and stand behind it in front of a room.</p>
+      <div class="hero-actions">
+        <a class="btn solid" href="#join">Join the team</a>
+        <a class="btn" href="#practice">Try the Practice Room</a>
+      </div>
+    </div>
+    <p class="hint" id="hint">Move across the letters. Press and hold to project.</p>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
+
+  <section id="events">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Nine ways to compete</p>
+        <div class="events-top">
+          <h2 class="h2">Find your event</h2>
+          <div class="filters" role="group" aria-label="Filter events">
+            <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="debate" aria-pressed="false">Debate</button>
+            <button class="chip" type="button" data-filter="speech" aria-pressed="false">Speech</button>
+            <button class="chip" type="button" data-filter="interp" aria-pressed="false">Interp</button>
+          </div>
+        </div>
+        <p class="lede">Every bar below is drawn on the same clock, so you can see what you're signing up for. Policy is a marathon. Impromptu is a sprint.</p>
+      </div>
+      <div class="legend" aria-hidden="true">
+        <span><i class="sw s"></i>Speaking</span>
+        <span><i class="sw x"></i>Cross-examination / questions</span>
+        <span><i class="sw p"></i>Prep time</span>
+      </div>
+      <div class="events" id="events-grid"></div>
+      <p class="footnote">Times follow common NSDA formats. Your league or tournament may run them differently.</p>
+    </div>
+  </section>
+
+  <section id="practice" class="practice">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">Open anytime, no sign-up</p>
+        <h2 class="h2">The Practice Room</h2>
+        <p class="lede">Draw a prompt, set the clock, and speak to the wall. The card on the left works like a timekeeper in the back of the room: it shows minutes left, then 30 seconds, then time.</p>
+      </div>
+      <div class="room">
+        <div class="panel">
+          <h3>Impromptu draw</h3>
+          <div class="prompt-box" id="prompt-box" aria-live="polite">
+            <span class="prompt-kind" id="prompt-kind">Quotation</span>
+            <p class="prompt-text" id="prompt-text">“Well done is better than well said.” — Benjamin Franklin</p>
+          </div>
+          <div class="row">
+            <button class="btn solid" type="button" id="draw">Draw a prompt</button>
+            <button class="btn" type="button" id="draw-go">Draw &amp; start 7:00</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Speech clock</h3>
+          <div class="row" role="group" aria-label="Clock presets" id="presets"></div>
+          <div class="clock">
+            <div class="timecard" id="timecard" aria-hidden="true"><b id="card-num">7</b><small id="card-cap">minutes</small></div>
+            <div class="readout">
+              <div class="digits" id="digits" role="timer" aria-live="off">7:00</div>
+              <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+              <p class="status" id="status">Impromptu · ready</p>
+              <div class="row">
+                <button class="btn solid" type="button" id="toggle">Start</button>
+                <button class="btn" type="button" id="reset">Reset</button>
+              </div>
+              <p class="status">Press <kbd>Space</kbd> to start or pause.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="season">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">From first speech to finals</p>
+        <h2 class="h2">How a season runs</h2>
+        <p class="lede">No experience needed. Most of our competitors had never given a speech before their first practice.</p>
+      </div>
+      <ol class="season">
+        <li><span class="when">Late summer</span><h3>Open mic night</h3><p>Give a 60-second speech about anything. Everybody goes. Nobody's graded.</p></li>
+        <li><span class="when">Early fall</span><h3>Skills lab</h3><p>Weekly workshops on structure, delivery, research, and taking notes on an argument.</p></li>
+        <li><span class="when">Fall</span><h3>Novice tournaments</h3><p>Your first rounds against other first-years, with a coach debriefing every ballot.</p></li>
+        <li><span class="when">Winter</span><h3>Varsity circuit</h3><p>Travel tournaments, bigger fields, elimination rounds, and speaker awards.</p></li>
+        <li><span class="when">Spring</span><h3>Qualifiers &amp; nationals</h3><p>Compete for a spot at the state and national championships.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="lingo">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label">You'll hear these on day one</p>
+        <h2 class="h2">Speak the language</h2>
+      </div>
+      <dl class="lingo">
+        <div><dt>The flow</dt><dd>Your notes on a debate round, written in columns so every argument can be tracked from speech to speech.</dd></div>
+        <div><dt>Cross-ex</dt><dd>Short for cross-examination. Your opponent asks, you answer. Three minutes where rounds are won or lost.</dd></div>
+        <div><dt>Extend</dt><dd>Carry an argument forward into your next speech so the judge still weighs it.</dd></div>
+        <div><dt>Drop</dt><dd>An argument your opponent never answered. Point it out and it counts as conceded.</dd></div>
+        <div><dt>Turn</dt><dd>Take your opponent's argument and show it actually proves your side.</dd></div>
+        <div><dt>Speaker points</dt><dd>The judge's score for how well you spoke, usually on a 25 to 30 scale. A 30 is a perfect round.</dd></div>
+        <div><dt>Grace period</dt><dd>A few seconds after time runs out to finish your sentence. Not a new paragraph.</dd></div>
+        <div><dt>Cutting</dt><dd>In interp, your edited version of a published script or book, trimmed to fit ten minutes.</dd></div>
+        <div><dt>Ballot</dt><dd>The judge's written decision and comments. Read every one of them.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap join">
+      <div class="section-head">
+        <p class="label">All grades · no experience needed</p>
+        <h2 class="h2">Your turn at the podium</h2>
+        <p class="lede">Tell us a little about yourself and which events caught your eye. A coach will follow up with practice times and the next open mic.</p>
+      </div>
+      <form id="join-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-grade">Grade</label>
+            <select id="f-grade" name="grade">
+              <option>6th</option><option>7th</option><option>8th</option>
+              <option selected>9th</option><option>10th</option><option>11th</option><option>12th</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <fieldset>
+          <legend>Events you're curious about</legend>
+          <div class="picks" id="picks"></div>
+        </fieldset>
+        <div class="field">
+          <label for="f-note">What do you want to get better at? (optional)</label>
+          <textarea id="f-note" name="note" rows="3" placeholder="Talking in class without my voice shaking."></textarea>
+        </div>
+        <p class="error" id="form-error" hidden></p>
+        <button class="btn solid" type="submit">Send my sign-up</button>
+        <div class="done" id="form-done" hidden aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top">
+      <span class="mark-bars" aria-hidden="true"><i style="height:8px"></i><i style="height:16px"></i><i style="height:20px"></i><i style="height:12px"></i><i style="height:6px"></i></span>
+      Public Voices
+    </a>
+    <p>Speech &amp; debate for students with something to say.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Kinetic headline: letters move like a voice meter ---------- */
+  const voice = document.getElementById("voice");
+  const chars = [];
+  voice.querySelectorAll(".line").forEach((line, li) => {
+    const text = line.textContent;
+    line.textContent = "";
+    [...text].forEach((c, i) => {
+      const s = document.createElement("span");
+      s.className = "ch";
+      s.textContent = c;
+      line.appendChild(s);
+      chars.push({ el: s, i: i + li * 6, level: 0.5 });
+    });
+  });
+
+  let pointer = null, projecting = false;
+  voice.addEventListener("pointermove", e => { pointer = { x: e.clientX, y: e.clientY }; });
+  voice.addEventListener("pointerleave", () => { pointer = null; projecting = false; });
+  voice.addEventListener("pointerdown", e => { projecting = true; pointer = { x: e.clientX, y: e.clientY }; });
+  addEventListener("pointerup", () => { projecting = false; });
+
+  const setChar = (c, lvl) => {
+    const wght = Math.round(250 + lvl * 650);
+    const wdth = Math.round(62 + lvl * 68);
+    c.el.style.fontVariationSettings = `"wght" ${wght}, "wdth" ${wdth}`;
+  };
+
+  if (reduce) {
+    chars.forEach(c => setChar(c, 0.45 + 0.4 * Math.sin(c.i * 0.9)));
+    document.getElementById("hint").hidden = true;
+  } else {
+    let rects = [];
+    const measure = () => { rects = chars.map(c => c.el.getBoundingClientRect()); };
+    const tick = t => {
+      const s = t / 1000;
+      if (pointer) measure();
+      chars.forEach((c, k) => {
+        // idle "speech": a few layered syllable rhythms
+        let target = 0.42
+          + 0.22 * Math.sin(s * 2.1 + c.i * 0.7)
+          + 0.14 * Math.sin(s * 5.3 + c.i * 1.9)
+          + 0.08 * Math.sin(s * 11.0 + c.i * 0.4);
+        if (pointer && rects[k]) {
+          const r = rects[k];
+          const dx = pointer.x - (r.left + r.width / 2);
+          const dy = pointer.y - (r.top + r.height / 2);
+          const d = Math.hypot(dx, dy * 0.6);
+          const reach = projecting ? 520 : 260;
+          target += Math.max(0, 1 - d / reach) * (projecting ? 1 : 0.7);
+        }
+        if (projecting) target += 0.15;
+        target = Math.min(1, Math.max(0, target));
+        c.level += (target - c.level) * 0.12;
+        setChar(c, c.level);
+      });
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- Marquee: resolution-style lines ---------- */
+  const lines = [
+    ["Resolved", "Students should be taught to disagree well"],
+    ["Topic", "The most important speech you'll give is the next one"],
+    ["Cross-ex", "Can you give me one example?"],
+    ["Ballot", "Clear signposting, strong impacts, slow down in rebuttal"],
+    ["Resolved", "Every voice in the room deserves to be heard"],
+    ["Reminder", "Flow the whole round"],
+  ];
+  const html = lines.map(([k, v]) => `<span><b>${k}</b>${v}</span>`).join("");
+  document.getElementById("marquee").innerHTML = html + html;
+
+  /* ---------- Events, drawn to one scale ---------- */
+  // s = speaking, x = cross-examination / questions, p = prep
+  const EVENTS = [
+    { name: "Lincoln-Douglas", type: "debate", who: "1 vs 1",
+      desc: "One-on-one debate over values like justice, liberty, and morality. For students who like philosophy and a sharp cross-ex.",
+      segs: [["AC",6,"s"],["CX",3,"x"],["NC",7,"s"],["CX",3,"x"],["1AR",4,"s"],["NR",6,"s"],["2AR",3,"s"],["Prep",8,"p"]],
+      note: "Round incl. 4 min prep per side" },
+    { name: "Public Forum", type: "debate", who: "2 vs 2",
+      desc: "Partner debate on current events, judged by everyday people. Clear explanation beats jargon every time.",
+      segs: [["Con",4,"s"],["Con",4,"s"],["CF",3,"x"],["Reb",4,"s"],["Reb",4,"s"],["CF",3,"x"],["Sum",3,"s"],["Sum",3,"s"],["GCF",3,"x"],["FF",2,"s"],["FF",2,"s"],["Prep",6,"p"]],
+      note: "Round incl. 3 min prep per team" },
+    { name: "Policy", type: "debate", who: "2 vs 2",
+      desc: "Deep research on one policy question for a whole year. Fast, evidence-heavy, and built for people who love to dig.",
+      segs: [["1AC",8,"s"],["CX",3,"x"],["1NC",8,"s"],["CX",3,"x"],["2AC",8,"s"],["CX",3,"x"],["2NC",8,"s"],["CX",3,"x"],["1NR",5,"s"],["1AR",5,"s"],["2NR",5,"s"],["2AR",5,"s"],["Prep",16,"p"]],
+      note: "Round incl. 8 min prep per team" },
+    { name: "Congress", type: "debate", who: "Chamber",
+      desc: "A mock legislature. Write bills, give speeches for and against, and run for presiding officer.",
+      segs: [["Speech",3,"s"],["Q",1,"x"]],
+      note: "Per speech · sessions run about 3 hours" },
+    { name: "Original Oratory", type: "speech", who: "Solo",
+      desc: "Write and memorize a persuasive speech about something you care about. Your argument, your story, your voice.",
+      segs: [["Speech",10,"s"]],
+      note: "Up to 10 min, memorized" },
+    { name: "Extemp", type: "speech", who: "Solo",
+      desc: "Draw a current-events question, research it for 30 minutes, then deliver a 7-minute answer without a script.",
+      segs: [["Prep",30,"p"],["Speech",7,"s"]],
+      note: "30 min prep, 7 min speech" },
+    { name: "Impromptu", type: "speech", who: "Solo",
+      desc: "Draw a quote, word, or object and speak on it almost immediately. The best training for thinking on your feet.",
+      segs: [["Prep",2,"p"],["Speech",5,"s"]],
+      note: "7 min total, you split prep and speech" },
+    { name: "Dramatic Interp", type: "interp", who: "Solo",
+      desc: "Perform a cutting from a published play or book, playing every character yourself. No props, no costumes.",
+      segs: [["Performance",10,"s"]],
+      note: "Up to 10 min, memorized" },
+    { name: "Duo Interp", type: "interp", who: "Pair",
+      desc: "Two performers, one story. You can't look at or touch your partner, so timing and focus do all the work.",
+      segs: [["Performance",10,"s"]],
+      note: "Up to 10 min, memorized" },
+  ];
+  const SCALE = 80; // minutes: the longest round (Policy)
+  const fmtMin = m => `${m} min`;
+  const grid = document.getElementById("events-grid");
+  grid.innerHTML = EVENTS.map(ev => {
+    const total = ev.segs.reduce((a, s) => a + s[1], 0);
+    const summary = ev.segs.map(([l, m]) => `${l} ${m} minutes`).join(", ");
+    const bar = ev.segs.map(([l, m, k]) => {
+      const w = (m / SCALE) * 100;
+      const show = w >= 5.5;
+      return `<div class="seg-${k}" style="flex:0 0 calc(${w}% - 2px)" title="${l} · ${m} min">${show ? l : ""}</div>`;
+    }).join("");
+    return `<article class="event" data-type="${ev.type}">
+      <div class="event-top"><h3>${ev.name}</h3><span class="tag">${ev.type} · ${ev.who}</span></div>
+      <p>${ev.desc}</p>
+      <div class="bar" role="img" aria-label="${ev.name} timing: ${summary}">${bar}</div>
+      <div class="meta"><span>${ev.note}</span><b>${fmtMin(total)}</b></div>
+    </article>`;
+  }).join("");
+
+  document.querySelectorAll("[data-filter]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const f = btn.dataset.filter;
+      document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
+      grid.querySelectorAll(".event").forEach(card => { card.hidden = f !== "all" && card.dataset.type !== f; });
+    });
+  });
+
+  /* ---------- Impromptu draw ---------- */
+  const PROMPTS = [
+    ["Quotation", "“Well done is better than well said.” — Benjamin Franklin"],
+    ["Quotation", "“The only way out is through.” — Robert Frost"],
+    ["Quotation", "“Not everything that is faced can be changed, but nothing can be changed until it is faced.” — James Baldwin"],
+    ["Quotation", "“Tell me and I forget; teach me and I remember; involve me and I learn.” — Traditional proverb"],
+    ["Abstract word", "Silence"],
+    ["Abstract word", "Momentum"],
+    ["Abstract word", "Home"],
+    ["Abstract word", "Borrowed time"],
+    ["Object", "A spare key"],
+    ["Object", "The last page of a notebook"],
+    ["Object", "A map with no labels"],
+    ["Object", "An umbrella someone left behind"],
+    ["Question", "Should homework be optional?"],
+    ["Question", "Is it better to be liked or respected?"],
+    ["Question", "What should every student learn before graduating?"],
+    ["Question", "Is failure a better teacher than success?"],
+  ];
+  let lastPrompt = 0;
+  const box = document.getElementById("prompt-box");
+  const draw = () => {
+    let n;
+    do { n = Math.floor(Math.random() * PROMPTS.length); } while (n === lastPrompt);
+    lastPrompt = n;
+    document.getElementById("prompt-kind").textContent = PROMPTS[n][0];
+    document.getElementById("prompt-text").textContent = PROMPTS[n][1];
+    box.classList.remove("flip"); void box.offsetWidth; box.classList.add("flip");
+  };
+  document.getElementById("draw").addEventListener("click", draw);
+  document.getElementById("draw-go").addEventListener("click", () => {
+    draw(); setPreset(PRESETS.findIndex(p => p.name === "Impromptu")); start();
+  });
+
+  /* ---------- Speech clock with timecards ---------- */
+  const PRESETS = [
+    { name: "Impromptu", secs: 420 },
+    { name: "PF Constructive", secs: 240 },
+    { name: "LD Aff Constructive", secs: 360 },
+    { name: "Extemp", secs: 420 },
+    { name: "Oratory", secs: 600 },
+    { name: "Elevator pitch", secs: 60 },
+  ];
+  const GRACE = 10;
+  const presetsEl = document.getElementById("presets");
+  presetsEl.innerHTML = PRESETS.map((p, i) =>
+    `<button class="chip" type="button" data-preset="${i}" aria-pressed="${i === 0}">${p.name} · ${Math.floor(p.secs / 60)}:${String(p.secs % 60).padStart(2, "0")}</button>`
+  ).join("");
+
+  const $ = id => document.getElementById(id);
+  const digits = $("digits"), statusEl = $("status"), card = $("timecard"),
+        cardNum = $("card-num"), cardCap = $("card-cap"), bar = $("progress"), toggleBtn = $("toggle");
+  let preset = 0, total = PRESETS[0].secs, elapsed = 0, running = false, startedAt = 0, raf = 0, lastCard = "";
+
+  const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const cardFor = rem => {
+    if (rem > 30) return [String(Math.ceil(rem / 60)), Math.ceil(rem / 60) === 1 ? "minute" : "minutes", false];
+    if (rem > 0) return ["30", "seconds", false];
+    if (rem > -GRACE) return ["0", "grace", true];
+    return ["STOP", "time", true];
+  };
+  const render = () => {
+    const rem = total - elapsed;
+    const over = rem < 0;
+    digits.textContent = over ? `+${fmt(-rem)}` : fmt(Math.ceil(rem));
+    digits.classList.toggle("over", over);
+    bar.style.width = `${Math.min(100, (elapsed / total) * 100)}%`;
+    const [num, cap, stop] = cardFor(rem);
+    const key = num + cap;
+    if (key !== lastCard) {
+      cardNum.textContent = num; cardCap.textContent = cap;
+      card.classList.toggle("stop", stop);
+      if (lastCard && !reduce) { card.classList.remove("pop"); void card.offsetWidth; card.classList.add("pop"); }
+      lastCard = key;
+    }
+    cardNum.style.fontSize = num.length > 2 ? "clamp(2.2rem, 5vw, 3rem)" : "";
+    const name = PRESETS[preset].name;
+    if (!running && elapsed === 0) statusEl.textContent = `${name} · ready`;
+    else if (!running) statusEl.textContent = `${name} · paused`;
+    else if (rem > 0) statusEl.textContent = `${name} · speaking`;
+    else if (rem > -GRACE) statusEl.textContent = `${name} · grace period, finish your sentence`;
+    else statusEl.textContent = `${name} · over time`;
+  };
+  const loop = t => {
+    elapsed = (t - startedAt) / 1000;
+    render();
+    raf = requestAnimationFrame(loop);
+  };
+  function start() {
+    if (running) return;
+    running = true;
+    startedAt = performance.now() - elapsed * 1000;
+    toggleBtn.textContent = "Pause";
+    raf = requestAnimationFrame(loop);
+  }
+  function pause() {
+    running = false;
+    cancelAnimationFrame(raf);
+    toggleBtn.textContent = "Resume";
+    render();
+  }
+  function reset() {
+    running = false;
+    cancelAnimationFrame(raf);
+    elapsed = 0; lastCard = "";
+    toggleBtn.textContent = "Start";
+    render();
+  }
+  function setPreset(i) {
+    preset = i; total = PRESETS[i].secs;
+    presetsEl.querySelectorAll("[data-preset]").forEach(b => b.setAttribute("aria-pressed", String(+b.dataset.preset === i)));
+    reset();
+  }
+  presetsEl.addEventListener("click", e => {
+    const b = e.target.closest("[data-preset]");
+    if (b) setPreset(+b.dataset.preset);
+  });
+  toggleBtn.addEventListener("click", () => (running ? pause() : start()));
+  $("reset").addEventListener("click", reset);
+  addEventListener("keydown", e => {
+    if (e.code !== "Space") return;
+    const tag = (e.target.tagName || "").toLowerCase();
+    if (["input", "textarea", "select", "button", "a"].includes(tag)) return;
+    const r = document.getElementById("practice").getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    e.preventDefault();
+    running ? pause() : start();
+  });
+  render();
+
+  /* ---------- Join form ---------- */
+  // To collect real sign-ups, set FORM_ENDPOINT to a form service URL
+  // (Formspree, Google Apps Script, etc.). It receives a JSON POST.
+  const FORM_ENDPOINT = "";
+  $("picks").innerHTML = EVENTS.map((ev, i) =>
+    `<label><input type="checkbox" id="pick-${i}" name="events" value="${ev.name}"><span>${ev.name}</span></label>`
+  ).join("") + `<label><input type="checkbox" id="pick-unsure" name="events" value="Not sure yet"><span>Not sure yet</span></label>`;
+
+  const form = $("join-form"), err = $("form-error"), done = $("form-done");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    data.events = [...form.querySelectorAll('input[name="events"]:checked')].map(i => i.value);
+    const name = (data.name || "").trim();
+    const email = (data.email || "").trim();
+    if (!name) { err.textContent = "Add your name so a coach knows who to look for."; err.hidden = false; $("f-name").focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Enter an email like name@school.org so we can send practice times."; err.hidden = false; $("f-email").focus(); return; }
+    err.hidden = true;
+    const first = name.split(/\s+/)[0];
+    if (!FORM_ENDPOINT) {
+      done.innerHTML = `<strong>Almost there, ${first.replace(/[<>&"]/g, "")}.</strong><span>Online sign-ups aren't connected yet, so nothing was sent. Bring this to a coach or the next open mic night.</span>`;
+      done.hidden = false;
+      return;
+    }
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(res.status);
+      done.innerHTML = `<strong>You're on the list, ${first.replace(/[<>&"]/g, "")}.</strong><span>A coach will email you practice times and the date of the next open mic.</span>`;
+      done.hidden = false;
+      form.reset();
+    } catch {
+      err.textContent = "Your sign-up didn't go through. Check your connection and try again.";
+      err.hidden = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
