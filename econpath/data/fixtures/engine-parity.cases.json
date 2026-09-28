@@ -1,0 +1,27 @@
+[
+  { "name": "ucla-econ-default", "path": { "collegeId": "ucla", "majorId": "economics" }, "assumptions": {} },
+  { "name": "nyu-finance-nyc", "path": { "collegeId": "nyu", "majorId": "finance", "cityId": "new-york" }, "assumptions": {} },
+  { "name": "gt-cs-career", "path": { "collegeId": "georgia-tech", "majorId": "computer-science", "occupationId": "software-developer", "cityId": "seattle" }, "assumptions": {} },
+  { "name": "institution-only", "path": { "collegeId": "ucf" }, "assumptions": {} },
+  { "name": "out-of-state", "path": { "collegeId": "umich", "majorId": "mechanical-engineering", "residency": "out-of-state" }, "assumptions": {} },
+  {
+    "name": "stressed",
+    "path": { "collegeId": "usc", "majorId": "fine-arts", "cityId": "los-angeles" },
+    "assumptions": { "tuitionChange": 0.2, "rentChange": 0.1, "salaryChange": -0.15, "inflation": 0.04, "loanRate": 0.08, "taxChange": 0.01 }
+  },
+  {
+    "name": "aid-and-family",
+    "path": { "collegeId": "boston-university", "majorId": "nursing" },
+    "assumptions": { "scholarshipPerYear": 10000, "familyContributionPerYear": 8000, "housingShare": 0.65, "livingWithFamilyYears": 2 }
+  },
+  {
+    "name": "grad-school",
+    "path": { "collegeId": "uw-seattle", "majorId": "biology", "occupationId": "physician-assistant" },
+    "assumptions": { "gradSchool": { "years": 2, "annualCost": 32000, "salaryPremium": 0.18 } }
+  },
+  {
+    "name": "overrides",
+    "path": { "collegeId": "ut-austin", "majorId": "accounting", "cityId": "dallas" },
+    "assumptions": { "grantAidOverride": 12000, "borrowingTotal": 20000, "salaryOverride": 70000, "rentOverride": 1400 }
+  }
+]

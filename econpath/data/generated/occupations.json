@@ -1,0 +1,2081 @@
+[
+ {
+  "id": "software-developer",
+  "socCode": "15-1252",
+  "title": "Software Developer",
+  "category": "Computer & Math",
+  "medianWage": 133080,
+  "p10Wage": 79850,
+  "p90Wage": 211450,
+  "employment": 1656000,
+  "growthPct": 15.8,
+  "annualOpenings": 115200,
+  "education": "Bachelor's",
+  "automationExposure": 38,
+  "relatedMajors": [
+   "computer-science",
+   "computer-engineering",
+   "mathematics",
+   "information-systems"
+  ]
+ },
+ {
+  "id": "data-scientist",
+  "socCode": "15-2051",
+  "title": "Data Scientist",
+  "category": "Computer & Math",
+  "medianWage": 112590,
+  "p10Wage": 63650,
+  "p90Wage": 194410,
+  "employment": 202900,
+  "growthPct": 33.5,
+  "annualOpenings": 20800,
+  "education": "Bachelor's",
+  "automationExposure": 42,
+  "relatedMajors": [
+   "statistics",
+   "computer-science",
+   "mathematics",
+   "economics"
+  ]
+ },
+ {
+  "id": "information-security-analyst",
+  "socCode": "15-1212",
+  "title": "Information Security Analyst",
+  "category": "Computer & Math",
+  "medianWage": 124910,
+  "p10Wage": 69660,
+  "p90Wage": 186420,
+  "employment": 180700,
+  "growthPct": 28.5,
+  "annualOpenings": 16000,
+  "education": "Bachelor's",
+  "automationExposure": 31,
+  "relatedMajors": [
+   "computer-science",
+   "information-systems",
+   "computer-engineering"
+  ]
+ },
+ {
+  "id": "computer-systems-analyst",
+  "socCode": "15-1211",
+  "title": "Computer Systems Analyst",
+  "category": "Computer & Math",
+  "medianWage": 103790,
+  "p10Wage": 64710,
+  "p90Wage": 164420,
+  "employment": 527200,
+  "growthPct": 9.1,
+  "annualOpenings": 34200,
+  "education": "Bachelor's",
+  "automationExposure": 45,
+  "relatedMajors": [
+   "information-systems",
+   "computer-science",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "computer-hardware-engineer",
+  "socCode": "17-2061",
+  "title": "Computer Hardware Engineer",
+  "category": "Engineering",
+  "medianWage": 155020,
+  "p10Wage": 88430,
+  "p90Wage": 223990,
+  "employment": 78700,
+  "growthPct": 7.2,
+  "annualOpenings": 5000,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "computer-engineering",
+   "electrical-engineering"
+  ]
+ },
+ {
+  "id": "network-architect",
+  "socCode": "15-1241",
+  "title": "Computer Network Architect",
+  "category": "Computer & Math",
+  "medianWage": 130390,
+  "p10Wage": 78810,
+  "p90Wage": 197020,
+  "employment": 178400,
+  "growthPct": 12.5,
+  "annualOpenings": 11400,
+  "education": "Bachelor's",
+  "automationExposure": 33,
+  "relatedMajors": [
+   "computer-engineering",
+   "information-systems",
+   "computer-science"
+  ]
+ },
+ {
+  "id": "web-developer",
+  "socCode": "15-1254",
+  "title": "Web Developer",
+  "category": "Computer & Math",
+  "medianWage": 90930,
+  "p10Wage": 48660,
+  "p90Wage": 160580,
+  "employment": 85700,
+  "growthPct": 7.1,
+  "annualOpenings": 14500,
+  "education": "Bachelor's",
+  "automationExposure": 55,
+  "relatedMajors": [
+   "computer-science",
+   "graphic-design",
+   "information-systems"
+  ]
+ },
+ {
+  "id": "quality-assurance-analyst",
+  "socCode": "15-1253",
+  "title": "Software QA Analyst & Tester",
+  "category": "Computer & Math",
+  "medianWage": 102610,
+  "p10Wage": 58420,
+  "p90Wage": 166960,
+  "employment": 201700,
+  "growthPct": 9.6,
+  "annualOpenings": 12600,
+  "education": "Bachelor's",
+  "automationExposure": 52,
+  "relatedMajors": [
+   "computer-science",
+   "information-systems",
+   "biomedical-engineering"
+  ]
+ },
+ {
+  "id": "database-administrator",
+  "socCode": "15-1242",
+  "title": "Database Administrator",
+  "category": "Computer & Math",
+  "medianWage": 104620,
+  "p10Wage": 58720,
+  "p90Wage": 166580,
+  "employment": 77300,
+  "growthPct": 4.4,
+  "annualOpenings": 4500,
+  "education": "Bachelor's",
+  "automationExposure": 48,
+  "relatedMajors": [
+   "information-systems",
+   "computer-science"
+  ]
+ },
+ {
+  "id": "computer-support-specialist",
+  "socCode": "15-1232",
+  "title": "Computer User Support Specialist",
+  "category": "Computer & Math",
+  "medianWage": 60340,
+  "p10Wage": 37600,
+  "p90Wage": 99470,
+  "employment": 707000,
+  "growthPct": 4.7,
+  "annualOpenings": 49600,
+  "education": "Some college",
+  "automationExposure": 58,
+  "relatedMajors": [
+   "information-systems",
+   "computer-science"
+  ]
+ },
+ {
+  "id": "it-manager",
+  "socCode": "11-3021",
+  "title": "Computer & Information Systems Manager",
+  "category": "Management",
+  "medianWage": 171200,
+  "p10Wage": 107090,
+  "p90Wage": 239200,
+  "employment": 613400,
+  "growthPct": 15.1,
+  "annualOpenings": 54700,
+  "education": "Bachelor's",
+  "automationExposure": 22,
+  "relatedMajors": [
+   "information-systems",
+   "computer-science",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "actuary",
+  "socCode": "15-2011",
+  "title": "Actuary",
+  "category": "Computer & Math",
+  "medianWage": 125770,
+  "p10Wage": 74480,
+  "p90Wage": 211520,
+  "employment": 30900,
+  "growthPct": 22.2,
+  "annualOpenings": 2400,
+  "education": "Bachelor's",
+  "automationExposure": 37,
+  "relatedMajors": [
+   "mathematics",
+   "statistics",
+   "finance"
+  ]
+ },
+ {
+  "id": "statistician",
+  "socCode": "15-2041",
+  "title": "Statistician",
+  "category": "Computer & Math",
+  "medianWage": 104350,
+  "p10Wage": 62740,
+  "p90Wage": 176180,
+  "employment": 38100,
+  "growthPct": 8.6,
+  "annualOpenings": 3800,
+  "education": "Master's",
+  "automationExposure": 40,
+  "relatedMajors": [
+   "statistics",
+   "mathematics",
+   "economics"
+  ]
+ },
+ {
+  "id": "operations-research-analyst",
+  "socCode": "15-2031",
+  "title": "Operations Research Analyst",
+  "category": "Computer & Math",
+  "medianWage": 91290,
+  "p10Wage": 56200,
+  "p90Wage": 155820,
+  "employment": 122600,
+  "growthPct": 21.5,
+  "annualOpenings": 9900,
+  "education": "Bachelor's",
+  "automationExposure": 36,
+  "relatedMajors": [
+   "industrial-engineering",
+   "mathematics",
+   "statistics",
+   "supply-chain"
+  ]
+ },
+ {
+  "id": "electrical-engineer",
+  "socCode": "17-2071",
+  "title": "Electrical Engineer",
+  "category": "Engineering",
+  "medianWage": 111910,
+  "p10Wage": 72710,
+  "p90Wage": 172230,
+  "employment": 196400,
+  "growthPct": 7.2,
+  "annualOpenings": 12500,
+  "education": "Bachelor's",
+  "automationExposure": 22,
+  "relatedMajors": [
+   "electrical-engineering",
+   "computer-engineering"
+  ]
+ },
+ {
+  "id": "electronics-engineer",
+  "socCode": "17-2072",
+  "title": "Electronics Engineer",
+  "category": "Engineering",
+  "medianWage": 127990,
+  "p10Wage": 80370,
+  "p90Wage": 187740,
+  "employment": 99700,
+  "growthPct": 7.4,
+  "annualOpenings": 6600,
+  "education": "Bachelor's",
+  "automationExposure": 23,
+  "relatedMajors": [
+   "electrical-engineering",
+   "computer-engineering"
+  ]
+ },
+ {
+  "id": "mechanical-engineer",
+  "socCode": "17-2141",
+  "title": "Mechanical Engineer",
+  "category": "Engineering",
+  "medianWage": 102320,
+  "p10Wage": 68580,
+  "p90Wage": 157470,
+  "employment": 291900,
+  "growthPct": 9.3,
+  "annualOpenings": 18100,
+  "education": "Bachelor's",
+  "automationExposure": 20,
+  "relatedMajors": [
+   "mechanical-engineering",
+   "aerospace-engineering"
+  ]
+ },
+ {
+  "id": "industrial-engineer",
+  "socCode": "17-2112",
+  "title": "Industrial Engineer",
+  "category": "Engineering",
+  "medianWage": 101140,
+  "p10Wage": 67830,
+  "p90Wage": 151730,
+  "employment": 352400,
+  "growthPct": 11.7,
+  "annualOpenings": 25200,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "industrial-engineering",
+   "mechanical-engineering",
+   "supply-chain"
+  ]
+ },
+ {
+  "id": "aerospace-engineer",
+  "socCode": "17-2011",
+  "title": "Aerospace Engineer",
+  "category": "Engineering",
+  "medianWage": 134830,
+  "p10Wage": 86770,
+  "p90Wage": 197490,
+  "employment": 68900,
+  "growthPct": 6.1,
+  "annualOpenings": 3700,
+  "education": "Bachelor's",
+  "automationExposure": 18,
+  "relatedMajors": [
+   "aerospace-engineering",
+   "mechanical-engineering",
+   "physics"
+  ]
+ },
+ {
+  "id": "chemical-engineer",
+  "socCode": "17-2041",
+  "title": "Chemical Engineer",
+  "category": "Engineering",
+  "medianWage": 121860,
+  "p10Wage": 76070,
+  "p90Wage": 184110,
+  "employment": 21300,
+  "growthPct": 3.3,
+  "annualOpenings": 1100,
+  "education": "Bachelor's",
+  "automationExposure": 21,
+  "relatedMajors": [
+   "chemical-engineering",
+   "chemistry"
+  ]
+ },
+ {
+  "id": "materials-engineer",
+  "socCode": "17-2131",
+  "title": "Materials Engineer",
+  "category": "Engineering",
+  "medianWage": 108310,
+  "p10Wage": 68640,
+  "p90Wage": 165530,
+  "employment": 28000,
+  "growthPct": 5.6,
+  "annualOpenings": 1800,
+  "education": "Bachelor's",
+  "automationExposure": 23,
+  "relatedMajors": [
+   "chemical-engineering",
+   "mechanical-engineering",
+   "physics"
+  ]
+ },
+ {
+  "id": "environmental-engineer",
+  "socCode": "17-2081",
+  "title": "Environmental Engineer",
+  "category": "Engineering",
+  "medianWage": 104170,
+  "p10Wage": 64340,
+  "p90Wage": 158270,
+  "employment": 54100,
+  "growthPct": 4.5,
+  "annualOpenings": 3300,
+  "education": "Bachelor's",
+  "automationExposure": 18,
+  "relatedMajors": [
+   "civil-engineering",
+   "environmental-science",
+   "chemical-engineering"
+  ]
+ },
+ {
+  "id": "civil-engineer",
+  "socCode": "17-2051",
+  "title": "Civil Engineer",
+  "category": "Engineering",
+  "medianWage": 99590,
+  "p10Wage": 65640,
+  "p90Wage": 160990,
+  "employment": 341800,
+  "growthPct": 6.2,
+  "annualOpenings": 22900,
+  "education": "Bachelor's",
+  "automationExposure": 17,
+  "relatedMajors": [
+   "civil-engineering",
+   "urban-planning"
+  ]
+ },
+ {
+  "id": "biomedical-engineer",
+  "socCode": "17-2031",
+  "title": "Bioengineer & Biomedical Engineer",
+  "category": "Engineering",
+  "medianWage": 106950,
+  "p10Wage": 67050,
+  "p90Wage": 165060,
+  "employment": 20700,
+  "growthPct": 5.1,
+  "annualOpenings": 1300,
+  "education": "Bachelor's",
+  "automationExposure": 20,
+  "relatedMajors": [
+   "biomedical-engineering",
+   "mechanical-engineering"
+  ]
+ },
+ {
+  "id": "engineering-manager",
+  "socCode": "11-9041",
+  "title": "Architectural & Engineering Manager",
+  "category": "Management",
+  "medianWage": 167740,
+  "p10Wage": 109540,
+  "p90Wage": 239200,
+  "employment": 202400,
+  "growthPct": 5.6,
+  "annualOpenings": 13100,
+  "education": "Bachelor's",
+  "automationExposure": 16,
+  "relatedMajors": [
+   "mechanical-engineering",
+   "electrical-engineering",
+   "civil-engineering",
+   "chemical-engineering"
+  ]
+ },
+ {
+  "id": "physicist",
+  "socCode": "19-2012",
+  "title": "Physicist",
+  "category": "Science",
+  "medianWage": 166290,
+  "p10Wage": 85610,
+  "p90Wage": 239200,
+  "employment": 21400,
+  "growthPct": 4.3,
+  "annualOpenings": 1400,
+  "education": "Doctoral",
+  "automationExposure": 19,
+  "relatedMajors": [
+   "physics",
+   "mathematics"
+  ]
+ },
+ {
+  "id": "chemist",
+  "socCode": "19-2031",
+  "title": "Chemist",
+  "category": "Science",
+  "medianWage": 84150,
+  "p10Wage": 51220,
+  "p90Wage": 145460,
+  "employment": 86400,
+  "growthPct": 4.1,
+  "annualOpenings": 6900,
+  "education": "Bachelor's",
+  "automationExposure": 27,
+  "relatedMajors": [
+   "chemistry",
+   "chemical-engineering"
+  ]
+ },
+ {
+  "id": "medical-scientist",
+  "socCode": "19-1042",
+  "title": "Medical Scientist",
+  "category": "Science",
+  "medianWage": 100590,
+  "p10Wage": 57230,
+  "p90Wage": 178870,
+  "employment": 142000,
+  "growthPct": 9.3,
+  "annualOpenings": 10000,
+  "education": "Doctoral",
+  "automationExposure": 17,
+  "relatedMajors": [
+   "biology",
+   "biomedical-engineering",
+   "chemistry",
+   "pre-med"
+  ]
+ },
+ {
+  "id": "biological-technician",
+  "socCode": "19-4021",
+  "title": "Biological Technician",
+  "category": "Science",
+  "medianWage": 51770,
+  "p10Wage": 37140,
+  "p90Wage": 82340,
+  "employment": 85700,
+  "growthPct": 5.0,
+  "annualOpenings": 9900,
+  "education": "Bachelor's",
+  "automationExposure": 39,
+  "relatedMajors": [
+   "biology",
+   "chemistry"
+  ]
+ },
+ {
+  "id": "environmental-scientist",
+  "socCode": "19-2041",
+  "title": "Environmental Scientist",
+  "category": "Science",
+  "medianWage": 80060,
+  "p10Wage": 50600,
+  "p90Wage": 134830,
+  "employment": 87100,
+  "growthPct": 4.1,
+  "annualOpenings": 6800,
+  "education": "Bachelor's",
+  "automationExposure": 21,
+  "relatedMajors": [
+   "environmental-science",
+   "biology",
+   "chemistry"
+  ]
+ },
+ {
+  "id": "conservation-scientist",
+  "socCode": "19-1031",
+  "title": "Conservation Scientist",
+  "category": "Science",
+  "medianWage": 68760,
+  "p10Wage": 44160,
+  "p90Wage": 104560,
+  "employment": 37400,
+  "growthPct": 4.3,
+  "annualOpenings": 3700,
+  "education": "Bachelor's",
+  "automationExposure": 14,
+  "relatedMajors": [
+   "environmental-science",
+   "agriculture"
+  ]
+ },
+ {
+  "id": "food-scientist",
+  "socCode": "19-1012",
+  "title": "Food Scientist & Technologist",
+  "category": "Science",
+  "medianWage": 81490,
+  "p10Wage": 48070,
+  "p90Wage": 134820,
+  "employment": 43700,
+  "growthPct": 7.0,
+  "annualOpenings": 3300,
+  "education": "Bachelor's",
+  "automationExposure": 26,
+  "relatedMajors": [
+   "agriculture",
+   "chemistry",
+   "biology"
+  ]
+ },
+ {
+  "id": "epidemiologist",
+  "socCode": "19-1041",
+  "title": "Epidemiologist",
+  "category": "Science",
+  "medianWage": 83980,
+  "p10Wage": 56620,
+  "p90Wage": 142680,
+  "employment": 11800,
+  "growthPct": 19.4,
+  "annualOpenings": 700,
+  "education": "Master's",
+  "automationExposure": 21,
+  "relatedMajors": [
+   "public-health",
+   "biology",
+   "statistics"
+  ]
+ },
+ {
+  "id": "economist",
+  "socCode": "19-3011",
+  "title": "Economist",
+  "category": "Social Science",
+  "medianWage": 115440,
+  "p10Wage": 66980,
+  "p90Wage": 208350,
+  "employment": 18800,
+  "growthPct": 4.6,
+  "annualOpenings": 1200,
+  "education": "Master's",
+  "automationExposure": 33,
+  "relatedMajors": [
+   "economics",
+   "mathematics",
+   "statistics"
+  ]
+ },
+ {
+  "id": "policy-analyst",
+  "socCode": "19-3094",
+  "title": "Policy Analyst & Political Scientist",
+  "category": "Social Science",
+  "medianWage": 132350,
+  "p10Wage": 69010,
+  "p90Wage": 196690,
+  "employment": 7900,
+  "growthPct": 3.5,
+  "annualOpenings": 600,
+  "education": "Master's",
+  "automationExposure": 35,
+  "relatedMajors": [
+   "political-science",
+   "economics",
+   "international-relations",
+   "urban-planning"
+  ]
+ },
+ {
+  "id": "market-research-analyst",
+  "socCode": "13-1161",
+  "title": "Market Research Analyst",
+  "category": "Business & Finance",
+  "medianWage": 76950,
+  "p10Wage": 43220,
+  "p90Wage": 145600,
+  "employment": 941700,
+  "growthPct": 7.1,
+  "annualOpenings": 87400,
+  "education": "Bachelor's",
+  "automationExposure": 53,
+  "relatedMajors": [
+   "marketing",
+   "statistics",
+   "economics",
+   "psychology"
+  ]
+ },
+ {
+  "id": "urban-planner",
+  "socCode": "19-3051",
+  "title": "Urban & Regional Planner",
+  "category": "Social Science",
+  "medianWage": 81800,
+  "p10Wage": 52870,
+  "p90Wage": 125570,
+  "employment": 41600,
+  "growthPct": 4.3,
+  "annualOpenings": 3600,
+  "education": "Master's",
+  "automationExposure": 20,
+  "relatedMajors": [
+   "urban-planning",
+   "civil-engineering",
+   "environmental-science"
+  ]
+ },
+ {
+  "id": "psychologist",
+  "socCode": "19-3039",
+  "title": "Psychologist",
+  "category": "Social Science",
+  "medianWage": 94310,
+  "p10Wage": 51570,
+  "p90Wage": 159380,
+  "employment": 193500,
+  "growthPct": 6.2,
+  "annualOpenings": 12900,
+  "education": "Doctoral",
+  "automationExposure": 11,
+  "relatedMajors": [
+   "psychology"
+  ]
+ },
+ {
+  "id": "financial-analyst",
+  "socCode": "13-2051",
+  "title": "Financial Analyst",
+  "category": "Business & Finance",
+  "medianWage": 101350,
+  "p10Wage": 61850,
+  "p90Wage": 184900,
+  "employment": 348200,
+  "growthPct": 6.5,
+  "annualOpenings": 27400,
+  "education": "Bachelor's",
+  "automationExposure": 46,
+  "relatedMajors": [
+   "finance",
+   "economics",
+   "accounting",
+   "mathematics"
+  ]
+ },
+ {
+  "id": "personal-financial-advisor",
+  "socCode": "13-2052",
+  "title": "Personal Financial Advisor",
+  "category": "Business & Finance",
+  "medianWage": 102140,
+  "p10Wage": 48790,
+  "p90Wage": 239200,
+  "employment": 321000,
+  "growthPct": 10.2,
+  "annualOpenings": 24100,
+  "education": "Bachelor's",
+  "automationExposure": 36,
+  "relatedMajors": [
+   "finance",
+   "economics",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "financial-manager",
+  "socCode": "11-3031",
+  "title": "Financial Manager",
+  "category": "Management",
+  "medianWage": 161700,
+  "p10Wage": 88430,
+  "p90Wage": 239200,
+  "employment": 868400,
+  "growthPct": 15.1,
+  "annualOpenings": 75100,
+  "education": "Bachelor's",
+  "automationExposure": 28,
+  "relatedMajors": [
+   "finance",
+   "accounting",
+   "economics"
+  ]
+ },
+ {
+  "id": "loan-officer",
+  "socCode": "13-2072",
+  "title": "Loan Officer",
+  "category": "Business & Finance",
+  "medianWage": 74180,
+  "p10Wage": 38430,
+  "p90Wage": 142510,
+  "employment": 321000,
+  "growthPct": 1.6,
+  "annualOpenings": 23800,
+  "education": "Bachelor's",
+  "automationExposure": 57,
+  "relatedMajors": [
+   "finance",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "accountant",
+  "socCode": "13-2011",
+  "title": "Accountant & Auditor",
+  "category": "Business & Finance",
+  "medianWage": 81680,
+  "p10Wage": 52140,
+  "p90Wage": 137920,
+  "employment": 1580000,
+  "growthPct": 5.4,
+  "annualOpenings": 124200,
+  "education": "Bachelor's",
+  "automationExposure": 49,
+  "relatedMajors": [
+   "accounting",
+   "finance"
+  ]
+ },
+ {
+  "id": "budget-analyst",
+  "socCode": "13-2031",
+  "title": "Budget Analyst",
+  "category": "Business & Finance",
+  "medianWage": 87930,
+  "p10Wage": 57040,
+  "p90Wage": 133030,
+  "employment": 49200,
+  "growthPct": 3.6,
+  "annualOpenings": 4100,
+  "education": "Bachelor's",
+  "automationExposure": 44,
+  "relatedMajors": [
+   "accounting",
+   "finance",
+   "economics"
+  ]
+ },
+ {
+  "id": "tax-examiner",
+  "socCode": "13-2081",
+  "title": "Tax Examiner & Collector",
+  "category": "Business & Finance",
+  "medianWage": 60600,
+  "p10Wage": 36740,
+  "p90Wage": 101300,
+  "employment": 56400,
+  "growthPct": -2.4,
+  "annualOpenings": 3700,
+  "education": "Bachelor's",
+  "automationExposure": 61,
+  "relatedMajors": [
+   "accounting",
+   "finance"
+  ]
+ },
+ {
+  "id": "insurance-underwriter",
+  "socCode": "13-2053",
+  "title": "Insurance Underwriter",
+  "category": "Business & Finance",
+  "medianWage": 79880,
+  "p10Wage": 50250,
+  "p90Wage": 138510,
+  "employment": 104000,
+  "growthPct": -4.4,
+  "annualOpenings": 8200,
+  "education": "Bachelor's",
+  "automationExposure": 64,
+  "relatedMajors": [
+   "finance",
+   "mathematics",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "compliance-officer",
+  "socCode": "13-1041",
+  "title": "Compliance Officer",
+  "category": "Business & Finance",
+  "medianWage": 78420,
+  "p10Wage": 46950,
+  "p90Wage": 128970,
+  "employment": 375600,
+  "growthPct": 3.8,
+  "annualOpenings": 29500,
+  "education": "Bachelor's",
+  "automationExposure": 40,
+  "relatedMajors": [
+   "political-science",
+   "accounting",
+   "criminal-justice"
+  ]
+ },
+ {
+  "id": "cost-estimator",
+  "socCode": "13-1051",
+  "title": "Cost Estimator",
+  "category": "Business & Finance",
+  "medianWage": 77070,
+  "p10Wage": 45390,
+  "p90Wage": 124180,
+  "employment": 221400,
+  "growthPct": -1.0,
+  "annualOpenings": 18000,
+  "education": "Bachelor's",
+  "automationExposure": 46,
+  "relatedMajors": [
+   "civil-engineering",
+   "supply-chain"
+  ]
+ },
+ {
+  "id": "securities-sales-agent",
+  "socCode": "41-3031",
+  "title": "Securities & Financial Services Sales Agent",
+  "category": "Sales",
+  "medianWage": 76900,
+  "p10Wage": 39910,
+  "p90Wage": 211680,
+  "employment": 493900,
+  "growthPct": 5.6,
+  "annualOpenings": 43100,
+  "education": "Bachelor's",
+  "automationExposure": 42,
+  "relatedMajors": [
+   "finance",
+   "economics"
+  ]
+ },
+ {
+  "id": "management-analyst",
+  "socCode": "13-1111",
+  "title": "Management Analyst",
+  "category": "Business & Finance",
+  "medianWage": 101190,
+  "p10Wage": 57920,
+  "p90Wage": 174410,
+  "employment": 1075000,
+  "growthPct": 9.0,
+  "annualOpenings": 92900,
+  "education": "Bachelor's",
+  "automationExposure": 35,
+  "relatedMajors": [
+   "business-administration",
+   "economics",
+   "industrial-engineering",
+   "political-science"
+  ]
+ },
+ {
+  "id": "logistician",
+  "socCode": "13-1081",
+  "title": "Logistician",
+  "category": "Business & Finance",
+  "medianWage": 80880,
+  "p10Wage": 49760,
+  "p90Wage": 128550,
+  "employment": 238000,
+  "growthPct": 17.3,
+  "annualOpenings": 24500,
+  "education": "Bachelor's",
+  "automationExposure": 38,
+  "relatedMajors": [
+   "supply-chain",
+   "industrial-engineering",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "human-resources-specialist",
+  "socCode": "13-1071",
+  "title": "Human Resources Specialist",
+  "category": "Business & Finance",
+  "medianWage": 72910,
+  "p10Wage": 45800,
+  "p90Wage": 126360,
+  "employment": 976800,
+  "growthPct": 6.1,
+  "annualOpenings": 81000,
+  "education": "Bachelor's",
+  "automationExposure": 45,
+  "relatedMajors": [
+   "business-administration",
+   "psychology",
+   "sociology"
+  ]
+ },
+ {
+  "id": "event-planner",
+  "socCode": "13-1121",
+  "title": "Meeting & Event Planner",
+  "category": "Business & Finance",
+  "medianWage": 59440,
+  "p10Wage": 36290,
+  "p90Wage": 98310,
+  "employment": 150800,
+  "growthPct": 6.8,
+  "annualOpenings": 15800,
+  "education": "Bachelor's",
+  "automationExposure": 32,
+  "relatedMajors": [
+   "hospitality",
+   "communications",
+   "marketing"
+  ]
+ },
+ {
+  "id": "sales-manager",
+  "socCode": "11-2022",
+  "title": "Sales Manager",
+  "category": "Management",
+  "medianWage": 138060,
+  "p10Wage": 64680,
+  "p90Wage": 239200,
+  "employment": 592400,
+  "growthPct": 4.4,
+  "annualOpenings": 42100,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "marketing",
+   "business-administration",
+   "international-business"
+  ]
+ },
+ {
+  "id": "marketing-manager",
+  "socCode": "11-2021",
+  "title": "Marketing Manager",
+  "category": "Management",
+  "medianWage": 161030,
+  "p10Wage": 85710,
+  "p90Wage": 239200,
+  "employment": 409400,
+  "growthPct": 6.1,
+  "annualOpenings": 34700,
+  "education": "Bachelor's",
+  "automationExposure": 27,
+  "relatedMajors": [
+   "marketing",
+   "communications",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "general-manager",
+  "socCode": "11-1021",
+  "title": "General & Operations Manager",
+  "category": "Management",
+  "medianWage": 102950,
+  "p10Wage": 50810,
+  "p90Wage": 239200,
+  "employment": 3507000,
+  "growthPct": 5.9,
+  "annualOpenings": 308700,
+  "education": "Bachelor's",
+  "automationExposure": 26,
+  "relatedMajors": [
+   "business-administration",
+   "supply-chain",
+   "economics"
+  ]
+ },
+ {
+  "id": "purchasing-manager",
+  "socCode": "11-3061",
+  "title": "Purchasing Manager",
+  "category": "Management",
+  "medianWage": 136380,
+  "p10Wage": 79440,
+  "p90Wage": 213850,
+  "employment": 76200,
+  "growthPct": 5.2,
+  "annualOpenings": 5700,
+  "education": "Bachelor's",
+  "automationExposure": 34,
+  "relatedMajors": [
+   "supply-chain",
+   "business-administration",
+   "agriculture"
+  ]
+ },
+ {
+  "id": "medical-health-manager",
+  "socCode": "11-9111",
+  "title": "Medical & Health Services Manager",
+  "category": "Management",
+  "medianWage": 117960,
+  "p10Wage": 69860,
+  "p90Wage": 219270,
+  "employment": 560000,
+  "growthPct": 23.2,
+  "annualOpenings": 61400,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "public-health",
+   "nursing",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "lodging-manager",
+  "socCode": "11-9081",
+  "title": "Lodging Manager",
+  "category": "Management",
+  "medianWage": 68810,
+  "p10Wage": 38160,
+  "p90Wage": 124880,
+  "employment": 56400,
+  "growthPct": 4.7,
+  "annualOpenings": 4400,
+  "education": "High school",
+  "automationExposure": 33,
+  "relatedMajors": [
+   "hospitality",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "food-service-manager",
+  "socCode": "11-9051",
+  "title": "Food Service Manager",
+  "category": "Management",
+  "medianWage": 65310,
+  "p10Wage": 40340,
+  "p90Wage": 105340,
+  "employment": 362900,
+  "growthPct": 5.8,
+  "annualOpenings": 39300,
+  "education": "High school",
+  "automationExposure": 35,
+  "relatedMajors": [
+   "hospitality",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "agricultural-manager",
+  "socCode": "11-9013",
+  "title": "Farmer & Agricultural Manager",
+  "category": "Management",
+  "medianWage": 87980,
+  "p10Wage": 41730,
+  "p90Wage": 158030,
+  "employment": 926300,
+  "growthPct": -3.8,
+  "annualOpenings": 82100,
+  "education": "High school",
+  "automationExposure": 30,
+  "relatedMajors": [
+   "agriculture",
+   "business-administration"
+  ]
+ },
+ {
+  "id": "construction-manager",
+  "socCode": "11-9021",
+  "title": "Construction Manager",
+  "category": "Management",
+  "medianWage": 106980,
+  "p10Wage": 66750,
+  "p90Wage": 180580,
+  "employment": 504900,
+  "growthPct": 9.2,
+  "annualOpenings": 46800,
+  "education": "Bachelor's",
+  "automationExposure": 19,
+  "relatedMajors": [
+   "civil-engineering",
+   "architecture",
+   "urban-planning"
+  ]
+ },
+ {
+  "id": "school-principal",
+  "socCode": "11-9032",
+  "title": "School Principal",
+  "category": "Education",
+  "medianWage": 103460,
+  "p10Wage": 69570,
+  "p90Wage": 161190,
+  "employment": 302800,
+  "growthPct": 0.8,
+  "annualOpenings": 21300,
+  "education": "Master's",
+  "automationExposure": 12,
+  "relatedMajors": [
+   "secondary-education",
+   "education"
+  ]
+ },
+ {
+  "id": "public-relations-specialist",
+  "socCode": "27-3031",
+  "title": "Public Relations Specialist",
+  "category": "Media & Communication",
+  "medianWage": 69780,
+  "p10Wage": 39480,
+  "p90Wage": 135330,
+  "employment": 305500,
+  "growthPct": 5.3,
+  "annualOpenings": 27800,
+  "education": "Bachelor's",
+  "automationExposure": 47,
+  "relatedMajors": [
+   "communications",
+   "journalism",
+   "marketing",
+   "english"
+  ]
+ },
+ {
+  "id": "writer",
+  "socCode": "27-3043",
+  "title": "Writer & Author",
+  "category": "Media & Communication",
+  "medianWage": 72270,
+  "p10Wage": 39700,
+  "p90Wage": 153910,
+  "employment": 148200,
+  "growthPct": 3.7,
+  "annualOpenings": 13500,
+  "education": "Bachelor's",
+  "automationExposure": 68,
+  "relatedMajors": [
+   "english",
+   "journalism",
+   "philosophy",
+   "communications"
+  ]
+ },
+ {
+  "id": "editor",
+  "socCode": "27-3041",
+  "title": "Editor",
+  "category": "Media & Communication",
+  "medianWage": 75020,
+  "p10Wage": 40630,
+  "p90Wage": 142360,
+  "employment": 120300,
+  "growthPct": -4.3,
+  "annualOpenings": 11400,
+  "education": "Bachelor's",
+  "automationExposure": 66,
+  "relatedMajors": [
+   "english",
+   "journalism",
+   "communications"
+  ]
+ },
+ {
+  "id": "reporter",
+  "socCode": "27-3023",
+  "title": "Reporter & Journalist",
+  "category": "Media & Communication",
+  "medianWage": 57500,
+  "p10Wage": 33530,
+  "p90Wage": 125360,
+  "employment": 48500,
+  "growthPct": -4.0,
+  "annualOpenings": 4600,
+  "education": "Bachelor's",
+  "automationExposure": 55,
+  "relatedMajors": [
+   "journalism",
+   "communications",
+   "english"
+  ]
+ },
+ {
+  "id": "producer",
+  "socCode": "27-2012",
+  "title": "Producer & Director",
+  "category": "Arts & Entertainment",
+  "medianWage": 83480,
+  "p10Wage": 42880,
+  "p90Wage": 194050,
+  "employment": 166400,
+  "growthPct": 6.8,
+  "annualOpenings": 15200,
+  "education": "Bachelor's",
+  "automationExposure": 27,
+  "relatedMajors": [
+   "film",
+   "communications",
+   "music"
+  ]
+ },
+ {
+  "id": "film-editor",
+  "socCode": "27-4032",
+  "title": "Film & Video Editor",
+  "category": "Arts & Entertainment",
+  "medianWage": 70570,
+  "p10Wage": 40030,
+  "p90Wage": 166350,
+  "employment": 37300,
+  "growthPct": 6.1,
+  "annualOpenings": 3200,
+  "education": "Bachelor's",
+  "automationExposure": 49,
+  "relatedMajors": [
+   "film",
+   "communications"
+  ]
+ },
+ {
+  "id": "interpreter",
+  "socCode": "27-3091",
+  "title": "Interpreter & Translator",
+  "category": "Media & Communication",
+  "medianWage": 59440,
+  "p10Wage": 36160,
+  "p90Wage": 101100,
+  "employment": 68700,
+  "growthPct": 1.6,
+  "annualOpenings": 6200,
+  "education": "Bachelor's",
+  "automationExposure": 71,
+  "relatedMajors": [
+   "foreign-languages",
+   "international-relations"
+  ]
+ },
+ {
+  "id": "graphic-designer",
+  "socCode": "27-1024",
+  "title": "Graphic Designer",
+  "category": "Arts & Entertainment",
+  "medianWage": 61300,
+  "p10Wage": 37030,
+  "p90Wage": 100450,
+  "employment": 265500,
+  "growthPct": 2.4,
+  "annualOpenings": 21900,
+  "education": "Bachelor's",
+  "automationExposure": 58,
+  "relatedMajors": [
+   "graphic-design",
+   "fine-arts",
+   "marketing"
+  ]
+ },
+ {
+  "id": "ux-designer",
+  "socCode": "15-1255",
+  "title": "Web & Digital Interface Designer",
+  "category": "Computer & Math",
+  "medianWage": 98540,
+  "p10Wage": 50230,
+  "p90Wage": 192180,
+  "employment": 113600,
+  "growthPct": 7.3,
+  "annualOpenings": 9800,
+  "education": "Bachelor's",
+  "automationExposure": 46,
+  "relatedMajors": [
+   "graphic-design",
+   "computer-science",
+   "psychology"
+  ]
+ },
+ {
+  "id": "art-director",
+  "socCode": "27-1011",
+  "title": "Art Director",
+  "category": "Arts & Entertainment",
+  "medianWage": 111040,
+  "p10Wage": 62020,
+  "p90Wage": 197920,
+  "employment": 138000,
+  "growthPct": 1.9,
+  "annualOpenings": 10900,
+  "education": "Bachelor's",
+  "automationExposure": 34,
+  "relatedMajors": [
+   "graphic-design",
+   "fine-arts",
+   "film"
+  ]
+ },
+ {
+  "id": "interior-designer",
+  "socCode": "27-1025",
+  "title": "Interior Designer",
+  "category": "Arts & Entertainment",
+  "medianWage": 64720,
+  "p10Wage": 39750,
+  "p90Wage": 106490,
+  "employment": 89500,
+  "growthPct": 3.8,
+  "annualOpenings": 8200,
+  "education": "Bachelor's",
+  "automationExposure": 32,
+  "relatedMajors": [
+   "architecture",
+   "fine-arts"
+  ]
+ },
+ {
+  "id": "fine-artist",
+  "socCode": "27-1013",
+  "title": "Fine Artist",
+  "category": "Arts & Entertainment",
+  "medianWage": 66020,
+  "p10Wage": 28850,
+  "p90Wage": 136430,
+  "employment": 26900,
+  "growthPct": 4.1,
+  "annualOpenings": 3000,
+  "education": "Bachelor's",
+  "automationExposure": 34,
+  "relatedMajors": [
+   "fine-arts"
+  ]
+ },
+ {
+  "id": "musician",
+  "socCode": "27-2042",
+  "title": "Musician & Singer",
+  "category": "Arts & Entertainment",
+  "medianWage": 41210,
+  "p10Wage": 20480,
+  "p90Wage": 105470,
+  "employment": 168400,
+  "growthPct": 1.4,
+  "annualOpenings": 24100,
+  "education": "Bachelor's",
+  "automationExposure": 25,
+  "relatedMajors": [
+   "music"
+  ]
+ },
+ {
+  "id": "music-director",
+  "socCode": "27-2041",
+  "title": "Music Director & Composer",
+  "category": "Arts & Entertainment",
+  "medianWage": 63540,
+  "p10Wage": 33170,
+  "p90Wage": 123920,
+  "employment": 64900,
+  "growthPct": 1.3,
+  "annualOpenings": 6000,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "music"
+  ]
+ },
+ {
+  "id": "curator",
+  "socCode": "25-4012",
+  "title": "Curator",
+  "category": "Education",
+  "medianWage": 65720,
+  "p10Wage": 39110,
+  "p90Wage": 108330,
+  "employment": 15400,
+  "growthPct": 6.2,
+  "annualOpenings": 1700,
+  "education": "Master's",
+  "automationExposure": 21,
+  "relatedMajors": [
+   "history",
+   "anthropology",
+   "fine-arts"
+  ]
+ },
+ {
+  "id": "architect",
+  "socCode": "17-1011",
+  "title": "Architect",
+  "category": "Engineering",
+  "medianWage": 96690,
+  "p10Wage": 59830,
+  "p90Wage": 158890,
+  "employment": 131400,
+  "growthPct": 4.2,
+  "annualOpenings": 8400,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "architecture",
+   "civil-engineering"
+  ]
+ },
+ {
+  "id": "lawyer",
+  "socCode": "23-1011",
+  "title": "Lawyer",
+  "category": "Legal",
+  "medianWage": 151160,
+  "p10Wage": 70680,
+  "p90Wage": 239200,
+  "employment": 861200,
+  "growthPct": 4.0,
+  "annualOpenings": 35600,
+  "education": "Professional",
+  "automationExposure": 33,
+  "relatedMajors": [
+   "political-science",
+   "philosophy",
+   "history",
+   "economics"
+  ]
+ },
+ {
+  "id": "paralegal",
+  "socCode": "23-2011",
+  "title": "Paralegal & Legal Assistant",
+  "category": "Legal",
+  "medianWage": 61010,
+  "p10Wage": 39970,
+  "p90Wage": 98090,
+  "employment": 376200,
+  "growthPct": 0.3,
+  "annualOpenings": 39000,
+  "education": "Associate",
+  "automationExposure": 62,
+  "relatedMajors": [
+   "political-science",
+   "criminal-justice",
+   "english"
+  ]
+ },
+ {
+  "id": "police-officer",
+  "socCode": "33-3051",
+  "title": "Police Officer",
+  "category": "Protective Service",
+  "medianWage": 76290,
+  "p10Wage": 48190,
+  "p90Wage": 121960,
+  "employment": 683300,
+  "growthPct": 3.0,
+  "annualOpenings": 63500,
+  "education": "High school",
+  "automationExposure": 9,
+  "relatedMajors": [
+   "criminal-justice",
+   "sociology"
+  ]
+ },
+ {
+  "id": "detective",
+  "socCode": "33-3021",
+  "title": "Detective & Criminal Investigator",
+  "category": "Protective Service",
+  "medianWage": 93580,
+  "p10Wage": 54820,
+  "p90Wage": 154560,
+  "employment": 113100,
+  "growthPct": 2.0,
+  "annualOpenings": 8600,
+  "education": "High school",
+  "automationExposure": 16,
+  "relatedMajors": [
+   "criminal-justice",
+   "political-science"
+  ]
+ },
+ {
+  "id": "probation-officer",
+  "socCode": "21-1092",
+  "title": "Probation Officer",
+  "category": "Community & Social Service",
+  "medianWage": 64520,
+  "p10Wage": 44580,
+  "p90Wage": 104190,
+  "employment": 90200,
+  "growthPct": 2.7,
+  "annualOpenings": 7700,
+  "education": "Bachelor's",
+  "automationExposure": 18,
+  "relatedMajors": [
+   "criminal-justice",
+   "social-work",
+   "sociology"
+  ]
+ },
+ {
+  "id": "firefighter",
+  "socCode": "33-2011",
+  "title": "Firefighter",
+  "category": "Protective Service",
+  "medianWage": 59530,
+  "p10Wage": 34970,
+  "p90Wage": 103460,
+  "employment": 337600,
+  "growthPct": 3.6,
+  "annualOpenings": 26900,
+  "education": "Postsecondary non-degree",
+  "automationExposure": 6,
+  "relatedMajors": [
+   "criminal-justice",
+   "public-health"
+  ]
+ },
+ {
+  "id": "social-worker",
+  "socCode": "21-1029",
+  "title": "Social Worker",
+  "category": "Community & Social Service",
+  "medianWage": 61330,
+  "p10Wage": 39430,
+  "p90Wage": 97470,
+  "employment": 772300,
+  "growthPct": 6.6,
+  "annualOpenings": 74700,
+  "education": "Bachelor's",
+  "automationExposure": 14,
+  "relatedMajors": [
+   "social-work",
+   "sociology",
+   "psychology",
+   "public-health"
+  ]
+ },
+ {
+  "id": "counselor",
+  "socCode": "21-1018",
+  "title": "Substance Abuse & Mental Health Counselor",
+  "category": "Community & Social Service",
+  "medianWage": 59190,
+  "p10Wage": 39720,
+  "p90Wage": 98000,
+  "employment": 466900,
+  "growthPct": 17.1,
+  "annualOpenings": 48300,
+  "education": "Bachelor's",
+  "automationExposure": 10,
+  "relatedMajors": [
+   "psychology",
+   "social-work"
+  ]
+ },
+ {
+  "id": "health-educator",
+  "socCode": "21-1091",
+  "title": "Health Education Specialist",
+  "category": "Community & Social Service",
+  "medianWage": 63000,
+  "p10Wage": 39020,
+  "p90Wage": 108480,
+  "employment": 132300,
+  "growthPct": 4.0,
+  "annualOpenings": 13300,
+  "education": "Bachelor's",
+  "automationExposure": 24,
+  "relatedMajors": [
+   "public-health",
+   "kinesiology"
+  ]
+ },
+ {
+  "id": "school-counselor",
+  "socCode": "21-1012",
+  "title": "School & Career Counselor",
+  "category": "Education",
+  "medianWage": 63090,
+  "p10Wage": 42610,
+  "p90Wage": 103030,
+  "employment": 352200,
+  "growthPct": 4.4,
+  "annualOpenings": 32800,
+  "education": "Master's",
+  "automationExposure": 13,
+  "relatedMajors": [
+   "psychology",
+   "education",
+   "secondary-education"
+  ]
+ },
+ {
+  "id": "elementary-teacher",
+  "socCode": "25-2021",
+  "title": "Elementary School Teacher",
+  "category": "Education",
+  "medianWage": 64190,
+  "p10Wage": 47550,
+  "p90Wage": 103320,
+  "employment": 1402400,
+  "growthPct": -1.3,
+  "annualOpenings": 103200,
+  "education": "Bachelor's",
+  "automationExposure": 13,
+  "relatedMajors": [
+   "education",
+   "english"
+  ]
+ },
+ {
+  "id": "high-school-teacher",
+  "socCode": "25-2031",
+  "title": "High School Teacher",
+  "category": "Education",
+  "medianWage": 65940,
+  "p10Wage": 48970,
+  "p90Wage": 106550,
+  "employment": 1105600,
+  "growthPct": 0.6,
+  "annualOpenings": 67100,
+  "education": "Bachelor's",
+  "automationExposure": 15,
+  "relatedMajors": [
+   "secondary-education",
+   "history",
+   "mathematics",
+   "english"
+  ]
+ },
+ {
+  "id": "special-education-teacher",
+  "socCode": "25-2050",
+  "title": "Special Education Teacher",
+  "category": "Education",
+  "medianWage": 66970,
+  "p10Wage": 48360,
+  "p90Wage": 107050,
+  "employment": 475300,
+  "growthPct": 0.1,
+  "annualOpenings": 33300,
+  "education": "Bachelor's",
+  "automationExposure": 11,
+  "relatedMajors": [
+   "education",
+   "psychology"
+  ]
+ },
+ {
+  "id": "instructional-coordinator",
+  "socCode": "25-9031",
+  "title": "Instructional Coordinator",
+  "category": "Education",
+  "medianWage": 74720,
+  "p10Wage": 46230,
+  "p90Wage": 116280,
+  "employment": 212100,
+  "growthPct": 1.7,
+  "annualOpenings": 17700,
+  "education": "Master's",
+  "automationExposure": 29,
+  "relatedMajors": [
+   "education",
+   "secondary-education"
+  ]
+ },
+ {
+  "id": "physician",
+  "socCode": "29-1210",
+  "title": "Physician",
+  "category": "Healthcare",
+  "medianWage": 239200,
+  "p10Wage": 74690,
+  "p90Wage": 239200,
+  "employment": 812900,
+  "growthPct": 3.7,
+  "annualOpenings": 23600,
+  "education": "Professional",
+  "automationExposure": 9,
+  "relatedMajors": [
+   "pre-med",
+   "biology",
+   "chemistry"
+  ]
+ },
+ {
+  "id": "registered-nurse",
+  "socCode": "29-1141",
+  "title": "Registered Nurse",
+  "category": "Healthcare",
+  "medianWage": 93600,
+  "p10Wage": 66030,
+  "p90Wage": 135320,
+  "employment": 3391700,
+  "growthPct": 5.2,
+  "annualOpenings": 189100,
+  "education": "Bachelor's",
+  "automationExposure": 9,
+  "relatedMajors": [
+   "nursing",
+   "biology",
+   "pre-med"
+  ]
+ },
+ {
+  "id": "nurse-practitioner",
+  "socCode": "29-1171",
+  "title": "Nurse Practitioner",
+  "category": "Healthcare",
+  "medianWage": 129210,
+  "p10Wage": 94530,
+  "p90Wage": 168030,
+  "employment": 307200,
+  "growthPct": 40.1,
+  "annualOpenings": 31300,
+  "education": "Master's",
+  "automationExposure": 7,
+  "relatedMajors": [
+   "nursing"
+  ]
+ },
+ {
+  "id": "physician-assistant",
+  "socCode": "29-1071",
+  "title": "Physician Assistant",
+  "category": "Healthcare",
+  "medianWage": 133260,
+  "p10Wage": 88600,
+  "p90Wage": 175060,
+  "employment": 158800,
+  "growthPct": 20.4,
+  "annualOpenings": 12900,
+  "education": "Master's",
+  "automationExposure": 8,
+  "relatedMajors": [
+   "pre-med",
+   "biology",
+   "kinesiology"
+  ]
+ },
+ {
+  "id": "pharmacist",
+  "socCode": "29-1051",
+  "title": "Pharmacist",
+  "category": "Healthcare",
+  "medianWage": 137480,
+  "p10Wage": 94850,
+  "p90Wage": 170940,
+  "employment": 339800,
+  "growthPct": 5.0,
+  "annualOpenings": 15400,
+  "education": "Professional",
+  "automationExposure": 29,
+  "relatedMajors": [
+   "pharmacy",
+   "chemistry"
+  ]
+ },
+ {
+  "id": "physical-therapist",
+  "socCode": "29-1123",
+  "title": "Physical Therapist",
+  "category": "Healthcare",
+  "medianWage": 101020,
+  "p10Wage": 72110,
+  "p90Wage": 132990,
+  "employment": 259200,
+  "growthPct": 11.1,
+  "annualOpenings": 13200,
+  "education": "Doctoral",
+  "automationExposure": 6,
+  "relatedMajors": [
+   "kinesiology",
+   "pre-med",
+   "biology"
+  ]
+ },
+ {
+  "id": "occupational-therapist",
+  "socCode": "29-1122",
+  "title": "Occupational Therapist",
+  "category": "Healthcare",
+  "medianWage": 98340,
+  "p10Wage": 67150,
+  "p90Wage": 132600,
+  "employment": 151900,
+  "growthPct": 10.9,
+  "annualOpenings": 9400,
+  "education": "Master's",
+  "automationExposure": 6,
+  "relatedMajors": [
+   "kinesiology",
+   "psychology"
+  ]
+ },
+ {
+  "id": "athletic-trainer",
+  "socCode": "29-9091",
+  "title": "Athletic Trainer",
+  "category": "Healthcare",
+  "medianWage": 60250,
+  "p10Wage": 44600,
+  "p90Wage": 82040,
+  "employment": 34300,
+  "growthPct": 11.4,
+  "annualOpenings": 2800,
+  "education": "Master's",
+  "automationExposure": 8,
+  "relatedMajors": [
+   "kinesiology"
+  ]
+ },
+ {
+  "id": "speech-language-pathologist",
+  "socCode": "29-1127",
+  "title": "Speech-Language Pathologist",
+  "category": "Healthcare",
+  "medianWage": 95410,
+  "p10Wage": 63020,
+  "p90Wage": 129900,
+  "employment": 186000,
+  "growthPct": 15.1,
+  "annualOpenings": 13600,
+  "education": "Master's",
+  "automationExposure": 9,
+  "relatedMajors": [
+   "psychology",
+   "education"
+  ]
+ },
+ {
+  "id": "dental-hygienist",
+  "socCode": "29-1292",
+  "title": "Dental Hygienist",
+  "category": "Healthcare",
+  "medianWage": 94260,
+  "p10Wage": 70480,
+  "p90Wage": 122210,
+  "employment": 217500,
+  "growthPct": 7.1,
+  "annualOpenings": 15600,
+  "education": "Associate",
+  "automationExposure": 10,
+  "relatedMajors": [
+   "biology",
+   "pre-med"
+  ]
+ },
+ {
+  "id": "radiologic-technologist",
+  "socCode": "29-2034",
+  "title": "Radiologic Technologist",
+  "category": "Healthcare",
+  "medianWage": 77660,
+  "p10Wage": 52890,
+  "p90Wage": 110580,
+  "employment": 223100,
+  "growthPct": 5.1,
+  "annualOpenings": 15400,
+  "education": "Associate",
+  "automationExposure": 21,
+  "relatedMajors": [
+   "biology",
+   "pre-med"
+  ]
+ },
+ {
+  "id": "fitness-trainer",
+  "socCode": "39-9031",
+  "title": "Fitness Trainer & Instructor",
+  "category": "Personal Care",
+  "medianWage": 46180,
+  "p10Wage": 27920,
+  "p90Wage": 81500,
+  "employment": 379100,
+  "growthPct": 11.8,
+  "annualOpenings": 66700,
+  "education": "High school",
+  "automationExposure": 12,
+  "relatedMajors": [
+   "kinesiology"
+  ]
+ },
+ {
+  "id": "electrician",
+  "socCode": "47-2111",
+  "title": "Electrician",
+  "category": "Skilled Trades",
+  "medianWage": 62350,
+  "p10Wage": 40450,
+  "p90Wage": 106030,
+  "employment": 818700,
+  "growthPct": 9.5,
+  "annualOpenings": 81000,
+  "education": "Apprenticeship",
+  "automationExposure": 11,
+  "relatedMajors": [
+   "electrical-engineering"
+  ]
+ },
+ {
+  "id": "plumber",
+  "socCode": "47-2152",
+  "title": "Plumber & Pipefitter",
+  "category": "Skilled Trades",
+  "medianWage": 62970,
+  "p10Wage": 39500,
+  "p90Wage": 105150,
+  "employment": 504500,
+  "growthPct": 4.4,
+  "annualOpenings": 44000,
+  "education": "Apprenticeship",
+  "automationExposure": 9,
+  "relatedMajors": [
+   "civil-engineering"
+  ]
+ },
+ {
+  "id": "hvac-technician",
+  "socCode": "49-9021",
+  "title": "HVAC Mechanic & Installer",
+  "category": "Skilled Trades",
+  "medianWage": 59810,
+  "p10Wage": 39180,
+  "p90Wage": 91020,
+  "employment": 428900,
+  "growthPct": 8.1,
+  "annualOpenings": 40100,
+  "education": "Postsecondary non-degree",
+  "automationExposure": 13,
+  "relatedMajors": [
+   "mechanical-engineering"
+  ]
+ },
+ {
+  "id": "wind-turbine-technician",
+  "socCode": "49-9081",
+  "title": "Wind Turbine Service Technician",
+  "category": "Skilled Trades",
+  "medianWage": 62580,
+  "p10Wage": 46370,
+  "p90Wage": 90420,
+  "employment": 13300,
+  "growthPct": 50.0,
+  "annualOpenings": 2100,
+  "education": "Postsecondary non-degree",
+  "automationExposure": 12,
+  "relatedMajors": [
+   "electrical-engineering",
+   "environmental-science"
+  ]
+ },
+ {
+  "id": "air-traffic-controller",
+  "socCode": "53-2021",
+  "title": "Air Traffic Controller",
+  "category": "Transportation",
+  "medianWage": 144580,
+  "p10Wage": 86500,
+  "p90Wage": 212550,
+  "employment": 25000,
+  "growthPct": 1.3,
+  "annualOpenings": 2200,
+  "education": "Associate",
+  "automationExposure": 18,
+  "relatedMajors": [
+   "aerospace-engineering"
+  ]
+ },
+ {
+  "id": "pilot",
+  "socCode": "53-2011",
+  "title": "Airline Pilot",
+  "category": "Transportation",
+  "medianWage": 226600,
+  "p10Wage": 113570,
+  "p90Wage": 239200,
+  "employment": 108600,
+  "growthPct": 4.2,
+  "annualOpenings": 8000,
+  "education": "Bachelor's",
+  "automationExposure": 20,
+  "relatedMajors": [
+   "aerospace-engineering",
+   "physics"
+  ]
+ },
+ {
+  "id": "real-estate-agent",
+  "socCode": "41-9022",
+  "title": "Real Estate Sales Agent",
+  "category": "Sales",
+  "medianWage": 56320,
+  "p10Wage": 30950,
+  "p90Wage": 114480,
+  "employment": 174300,
+  "growthPct": 1.9,
+  "annualOpenings": 39900,
+  "education": "High school",
+  "automationExposure": 40,
+  "relatedMajors": [
+   "business-administration",
+   "finance",
+   "marketing"
+  ]
+ }
+]

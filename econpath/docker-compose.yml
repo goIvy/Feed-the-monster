@@ -1,0 +1,19 @@
+# Local stack: PostgreSQL + the API. Run the web app separately with `npm run dev`.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: econpath
+      POSTGRES_PASSWORD: econpath
+      POSTGRES_DB: econpath
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+  api:
+    build: { context: ., dockerfile: api/Dockerfile }
+    environment:
+      ECONPATH_DATA_BACKEND: ${ECONPATH_DATA_BACKEND:-json}
+      ECONPATH_DATABASE_URL: postgresql+psycopg://econpath:econpath@db:5432/econpath
+    ports: ["8000:8000"]
+    depends_on: [db]
+volumes:
+  pgdata:

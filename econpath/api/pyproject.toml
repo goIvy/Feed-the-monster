@@ -1,0 +1,13 @@
+[project]
+name = "econpath-api"
+version = "0.1.0"
+description = "EconPath reference data API and calculation engine"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"

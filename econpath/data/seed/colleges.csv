@@ -1,0 +1,56 @@
+id,name,short_name,city_id,state,control,undergrad_size,acceptance_rate,tuition_in_state,tuition_out_of_state,cost_of_attendance,avg_net_price,pct_receiving_grants,avg_grant_aid,grad_rate,retention_rate,median_earnings_10yr,median_debt,lat,lon
+ucla,"University of California, Los Angeles",UCLA,los-angeles,CA,public,33000,0.09,14700,48100,38500,15600,0.62,21800,0.92,0.97,82400,13300,34.0689,-118.4452
+uc-berkeley,"University of California, Berkeley",UC Berkeley,san-francisco,CA,public,32800,0.11,16300,51000,45600,19600,0.58,22400,0.93,0.97,90300,12700,37.8719,-122.2585
+usc,University of Southern California,USC,los-angeles,CA,private,21000,0.10,69900,69900,95200,37800,0.44,51200,0.92,0.96,89400,19100,34.0224,-118.2851
+nyu,New York University,NYU,new-york,NY,private,29400,0.09,62800,62800,93100,42500,0.49,38600,0.88,0.94,84900,23300,40.7295,-73.9965
+boston-university,Boston University,Boston University,boston,MA,private,18500,0.11,66700,66700,90100,32400,0.46,52300,0.89,0.94,83100,22000,42.3505,-71.1054
+georgia-tech,Georgia Institute of Technology,Georgia Tech,atlanta,GA,public,19500,0.16,11800,33800,31300,16100,0.42,12400,0.92,0.98,104500,20500,33.7756,-84.3963
+stanford,Stanford University,Stanford,san-jose,CA,private,7800,0.04,65100,65100,92300,17100,0.52,67900,0.95,0.98,124100,12500,37.4275,-122.1697
+mit,Massachusetts Institute of Technology,MIT,boston,MA,private,4600,0.05,62000,62000,85900,19200,0.61,59800,0.95,0.99,143400,13100,42.3601,-71.0942
+harvard,Harvard University,Harvard,boston,MA,private,7100,0.04,59300,59300,86900,16400,0.55,66100,0.98,0.98,97600,10800,42.3770,-71.1167
+umich,University of Michigan,Michigan,ann-arbor,MI,public,33700,0.18,17800,60900,36600,17400,0.51,21600,0.93,0.97,81400,21300,42.2780,-83.7382
+uiuc,University of Illinois Urbana-Champaign,Illinois,champaign,IL,public,35100,0.44,17600,36600,35600,17800,0.52,14200,0.85,0.94,76900,20000,40.1020,-88.2272
+ut-austin,The University of Texas at Austin,UT Austin,austin,TX,public,42400,0.31,11700,41100,30400,16200,0.48,12100,0.88,0.96,74600,19500,30.2849,-97.7341
+uw-seattle,University of Washington,UW,seattle,WA,public,36900,0.43,12900,43200,32600,10600,0.48,15900,0.84,0.94,76400,16900,47.6553,-122.3035
+uva,University of Virginia,UVA,richmond,VA,public,17500,0.17,22000,58900,39900,17600,0.36,24900,0.95,0.97,83200,20900,38.0336,-78.5080
+unc,University of North Carolina at Chapel Hill,UNC Chapel Hill,durham,NC,public,20200,0.17,9000,39300,28100,11500,0.46,15600,0.91,0.96,67400,17700,35.9049,-79.0469
+duke,Duke University,Duke,durham,NC,private,6600,0.06,66300,66300,90400,23800,0.43,60300,0.96,0.98,95700,15600,36.0014,-78.9382
+northwestern,Northwestern University,Northwestern,chicago,IL,private,8800,0.07,65000,65000,91300,26700,0.46,59900,0.95,0.98,89600,15300,42.0565,-87.6753
+uchicago,University of Chicago,UChicago,chicago,IL,private,7500,0.05,67600,67600,93700,25600,0.45,62100,0.96,0.99,89300,15000,41.7886,-87.5987
+columbia,Columbia University,Columbia,new-york,NY,private,8900,0.04,68400,68400,94400,21300,0.51,65000,0.95,0.99,98600,16100,40.8075,-73.9626
+upenn,University of Pennsylvania,Penn,philadelphia,PA,private,10000,0.06,66100,66100,92500,25300,0.46,60200,0.96,0.98,112100,14600,39.9522,-75.1932
+cornell,Cornell University,Cornell,buffalo,NY,private,15700,0.08,66000,66000,90000,30700,0.47,55900,0.95,0.97,97400,14300,42.4534,-76.4735
+carnegie-mellon,Carnegie Mellon University,Carnegie Mellon,pittsburgh,PA,private,7400,0.11,63800,63800,86000,35600,0.39,46800,0.93,0.97,111400,21700,40.4433,-79.9436
+rice,Rice University,Rice,houston,TX,private,4500,0.08,60700,60700,81700,21400,0.54,51900,0.94,0.97,86700,11400,29.7174,-95.4018
+vanderbilt,Vanderbilt University,Vanderbilt,nashville,TN,private,7100,0.06,65000,65000,93600,24800,0.53,63100,0.93,0.97,82800,14400,36.1447,-86.8027
+emory,Emory University,Emory,atlanta,GA,private,7300,0.11,60800,60800,85800,28700,0.47,49500,0.91,0.95,77300,17600,33.7925,-84.3240
+georgetown,Georgetown University,Georgetown,washington-dc,DC,private,7900,0.13,66000,66000,91500,34100,0.38,53300,0.95,0.96,101700,17800,38.9076,-77.0723
+notre-dame,University of Notre Dame,Notre Dame,indianapolis,IN,private,8900,0.11,65000,65000,87900,32900,0.47,50800,0.97,0.98,95900,20200,41.7052,-86.2353
+wustl,Washington University in St. Louis,WashU,st-louis,MO,private,8400,0.12,64500,64500,88900,27500,0.35,59100,0.94,0.97,88300,14500,38.6488,-90.3108
+ucsd,"University of California, San Diego",UC San Diego,san-diego,CA,public,33100,0.25,15300,48900,39700,14800,0.58,21400,0.88,0.94,80100,14800,32.8801,-117.2340
+uc-davis,"University of California, Davis",UC Davis,sacramento,CA,public,31700,0.42,15200,48800,40300,16700,0.58,19800,0.86,0.92,71900,15700,38.5382,-121.7617
+uc-irvine,"University of California, Irvine",UC Irvine,los-angeles,CA,public,29500,0.26,14600,48000,40100,11600,0.63,22300,0.87,0.93,72300,14600,33.6405,-117.8443
+cal-poly-slo,"California Polytechnic State University, San Luis Obispo",Cal Poly SLO,los-angeles,CA,public,21000,0.33,11400,23300,37700,26300,0.34,9700,0.85,0.94,83900,20500,35.3050,-120.6625
+sjsu,San Jose State University,San Jose State,san-jose,CA,public,27600,0.83,8100,17600,34400,15900,0.62,11200,0.67,0.85,79300,14900,37.3352,-121.8811
+purdue,Purdue University,Purdue,indianapolis,IN,public,39200,0.50,9700,28800,22900,13700,0.40,9800,0.84,0.93,76600,20900,40.4237,-86.9212
+ohio-state,The Ohio State University,Ohio State,columbus,OH,public,46100,0.51,12900,38400,30200,19500,0.52,10600,0.88,0.94,66300,21500,40.0067,-83.0305
+penn-state,Pennsylvania State University,Penn State,pittsburgh,PA,public,41200,0.55,19700,39000,35200,26900,0.36,9900,0.84,0.93,68500,26500,40.7982,-77.8599
+uw-madison,University of Wisconsin-Madison,UW-Madison,madison,WI,public,37200,0.43,11200,42300,29600,15600,0.41,11600,0.89,0.95,68900,19700,43.0766,-89.4125
+umn,University of Minnesota Twin Cities,Minnesota,minneapolis,MN,public,39600,0.75,16400,36400,32800,17300,0.52,12100,0.84,0.93,66900,22400,44.9740,-93.2277
+uf,University of Florida,Florida,tampa,FL,public,34900,0.24,6400,28700,21700,5900,0.64,10300,0.90,0.97,64100,15300,29.6436,-82.3549
+fsu,Florida State University,Florida State,orlando,FL,public,33600,0.25,5700,18800,22600,12400,0.56,7900,0.84,0.94,53400,17800,30.4419,-84.2985
+tamu,Texas A&M University,Texas A&M,houston,TX,public,57500,0.63,13100,40600,31200,18300,0.45,10400,0.84,0.93,72300,20300,30.6187,-96.3365
+arizona-state,Arizona State University,Arizona State,phoenix,AZ,public,65500,0.90,12100,32200,31700,15400,0.66,10600,0.72,0.86,58300,21900,33.4242,-111.9281
+ucf,University of Central Florida,UCF,orlando,FL,public,60000,0.41,6400,22500,24400,14700,0.66,7200,0.76,0.92,50700,18100,28.6024,-81.2001
+cu-boulder,University of Colorado Boulder,CU Boulder,denver,CO,public,31100,0.81,13200,42100,33700,22900,0.45,11300,0.75,0.87,62300,21900,40.0076,-105.2659
+utah,University of Utah,Utah,salt-lake-city,UT,public,26800,0.87,10300,33300,27900,15700,0.52,8300,0.68,0.90,61300,16600,40.7649,-111.8421
+virginia-tech,Virginia Tech,Virginia Tech,richmond,VA,public,30400,0.57,15900,36700,33500,21900,0.40,9300,0.86,0.93,77300,24100,37.2284,-80.4234
+nc-state,North Carolina State University,NC State,raleigh,NC,public,27200,0.40,9100,31000,26500,14700,0.46,9600,0.85,0.94,64600,20600,35.7847,-78.6821
+rutgers,Rutgers University-New Brunswick,Rutgers,new-york,NY,public,36600,0.65,17200,36000,35600,19200,0.51,11300,0.84,0.93,72800,22500,40.5008,-74.4474
+cuny-baruch,CUNY Bernard M. Baruch College,Baruch College,new-york,NY,public,16300,0.44,7400,15300,23900,4900,0.72,7800,0.73,0.89,64600,11300,40.7402,-73.9834
+spelman,Spelman College,Spelman,atlanta,GA,private,2400,0.28,29900,29900,51300,33300,0.73,15100,0.76,0.90,54100,27000,33.7454,-84.4118
+howard,Howard University,Howard,washington-dc,DC,private,10800,0.35,33100,33100,55600,32500,0.58,14400,0.66,0.89,54400,26000,38.9227,-77.0194
+tulane,Tulane University,Tulane,new-orleans,LA,private,8600,0.13,66300,66300,88600,41600,0.44,40700,0.86,0.93,70800,23800,29.9400,-90.1206
+byu,Brigham Young University,BYU,salt-lake-city,UT,private,31300,0.64,6700,6700,21100,14900,0.46,4400,0.83,0.91,66500,11900,40.2518,-111.6493
+brown,Brown University,Brown,providence,RI,private,7200,0.05,68200,68200,91700,26800,0.44,59500,0.96,0.98,85300,15500,41.8268,-71.4025
+northeastern,Northeastern University,Northeastern,boston,MA,private,20400,0.06,63100,63100,88600,38000,0.43,36800,0.91,0.97,87100,21900,42.3398,-71.0892

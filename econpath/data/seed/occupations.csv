@@ -1,0 +1,113 @@
+id,soc_code,title,category,median_wage,p10_wage,p90_wage,employment,growth_pct,annual_openings,education,automation_exposure,related_majors
+software-developer,15-1252,Software Developer,Computer & Math,133080,79850,211450,1656000,15.8,115200,Bachelor's,38,computer-science|computer-engineering|mathematics|information-systems
+data-scientist,15-2051,Data Scientist,Computer & Math,112590,63650,194410,202900,33.5,20800,Bachelor's,42,statistics|computer-science|mathematics|economics
+information-security-analyst,15-1212,Information Security Analyst,Computer & Math,124910,69660,186420,180700,28.5,16000,Bachelor's,31,computer-science|information-systems|computer-engineering
+computer-systems-analyst,15-1211,Computer Systems Analyst,Computer & Math,103790,64710,164420,527200,9.1,34200,Bachelor's,45,information-systems|computer-science|business-administration
+computer-hardware-engineer,17-2061,Computer Hardware Engineer,Engineering,155020,88430,223990,78700,7.2,5000,Bachelor's,24,computer-engineering|electrical-engineering
+network-architect,15-1241,Computer Network Architect,Computer & Math,130390,78810,197020,178400,12.5,11400,Bachelor's,33,computer-engineering|information-systems|computer-science
+web-developer,15-1254,Web Developer,Computer & Math,90930,48660,160580,85700,7.1,14500,Bachelor's,55,computer-science|graphic-design|information-systems
+quality-assurance-analyst,15-1253,Software QA Analyst & Tester,Computer & Math,102610,58420,166960,201700,9.6,12600,Bachelor's,52,computer-science|information-systems|biomedical-engineering
+database-administrator,15-1242,Database Administrator,Computer & Math,104620,58720,166580,77300,4.4,4500,Bachelor's,48,information-systems|computer-science
+computer-support-specialist,15-1232,Computer User Support Specialist,Computer & Math,60340,37600,99470,707000,4.7,49600,Some college,58,information-systems|computer-science
+it-manager,11-3021,Computer & Information Systems Manager,Management,171200,107090,239200,613400,15.1,54700,Bachelor's,22,information-systems|computer-science|business-administration
+actuary,15-2011,Actuary,Computer & Math,125770,74480,211520,30900,22.2,2400,Bachelor's,37,mathematics|statistics|finance
+statistician,15-2041,Statistician,Computer & Math,104350,62740,176180,38100,8.6,3800,Master's,40,statistics|mathematics|economics
+operations-research-analyst,15-2031,Operations Research Analyst,Computer & Math,91290,56200,155820,122600,21.5,9900,Bachelor's,36,industrial-engineering|mathematics|statistics|supply-chain
+electrical-engineer,17-2071,Electrical Engineer,Engineering,111910,72710,172230,196400,7.2,12500,Bachelor's,22,electrical-engineering|computer-engineering
+electronics-engineer,17-2072,Electronics Engineer,Engineering,127990,80370,187740,99700,7.4,6600,Bachelor's,23,electrical-engineering|computer-engineering
+mechanical-engineer,17-2141,Mechanical Engineer,Engineering,102320,68580,157470,291900,9.3,18100,Bachelor's,20,mechanical-engineering|aerospace-engineering
+industrial-engineer,17-2112,Industrial Engineer,Engineering,101140,67830,151730,352400,11.7,25200,Bachelor's,24,industrial-engineering|mechanical-engineering|supply-chain
+aerospace-engineer,17-2011,Aerospace Engineer,Engineering,134830,86770,197490,68900,6.1,3700,Bachelor's,18,aerospace-engineering|mechanical-engineering|physics
+chemical-engineer,17-2041,Chemical Engineer,Engineering,121860,76070,184110,21300,3.3,1100,Bachelor's,21,chemical-engineering|chemistry
+materials-engineer,17-2131,Materials Engineer,Engineering,108310,68640,165530,28000,5.6,1800,Bachelor's,23,chemical-engineering|mechanical-engineering|physics
+environmental-engineer,17-2081,Environmental Engineer,Engineering,104170,64340,158270,54100,4.5,3300,Bachelor's,18,civil-engineering|environmental-science|chemical-engineering
+civil-engineer,17-2051,Civil Engineer,Engineering,99590,65640,160990,341800,6.2,22900,Bachelor's,17,civil-engineering|urban-planning
+biomedical-engineer,17-2031,Bioengineer & Biomedical Engineer,Engineering,106950,67050,165060,20700,5.1,1300,Bachelor's,20,biomedical-engineering|mechanical-engineering
+engineering-manager,11-9041,Architectural & Engineering Manager,Management,167740,109540,239200,202400,5.6,13100,Bachelor's,16,mechanical-engineering|electrical-engineering|civil-engineering|chemical-engineering
+physicist,19-2012,Physicist,Science,166290,85610,239200,21400,4.3,1400,Doctoral,19,physics|mathematics
+chemist,19-2031,Chemist,Science,84150,51220,145460,86400,4.1,6900,Bachelor's,27,chemistry|chemical-engineering
+medical-scientist,19-1042,Medical Scientist,Science,100590,57230,178870,142000,9.3,10000,Doctoral,17,biology|biomedical-engineering|chemistry|pre-med
+biological-technician,19-4021,Biological Technician,Science,51770,37140,82340,85700,5.0,9900,Bachelor's,39,biology|chemistry
+environmental-scientist,19-2041,Environmental Scientist,Science,80060,50600,134830,87100,4.1,6800,Bachelor's,21,environmental-science|biology|chemistry
+conservation-scientist,19-1031,Conservation Scientist,Science,68760,44160,104560,37400,4.3,3700,Bachelor's,14,environmental-science|agriculture
+food-scientist,19-1012,Food Scientist & Technologist,Science,81490,48070,134820,43700,7.0,3300,Bachelor's,26,agriculture|chemistry|biology
+epidemiologist,19-1041,Epidemiologist,Science,83980,56620,142680,11800,19.4,700,Master's,21,public-health|biology|statistics
+economist,19-3011,Economist,Social Science,115440,66980,208350,18800,4.6,1200,Master's,33,economics|mathematics|statistics
+policy-analyst,19-3094,Policy Analyst & Political Scientist,Social Science,132350,69010,196690,7900,3.5,600,Master's,35,political-science|economics|international-relations|urban-planning
+market-research-analyst,13-1161,Market Research Analyst,Business & Finance,76950,43220,145600,941700,7.1,87400,Bachelor's,53,marketing|statistics|economics|psychology
+urban-planner,19-3051,Urban & Regional Planner,Social Science,81800,52870,125570,41600,4.3,3600,Master's,20,urban-planning|civil-engineering|environmental-science
+psychologist,19-3039,Psychologist,Social Science,94310,51570,159380,193500,6.2,12900,Doctoral,11,psychology
+financial-analyst,13-2051,Financial Analyst,Business & Finance,101350,61850,184900,348200,6.5,27400,Bachelor's,46,finance|economics|accounting|mathematics
+personal-financial-advisor,13-2052,Personal Financial Advisor,Business & Finance,102140,48790,239200,321000,10.2,24100,Bachelor's,36,finance|economics|business-administration
+financial-manager,11-3031,Financial Manager,Management,161700,88430,239200,868400,15.1,75100,Bachelor's,28,finance|accounting|economics
+loan-officer,13-2072,Loan Officer,Business & Finance,74180,38430,142510,321000,1.6,23800,Bachelor's,57,finance|business-administration
+accountant,13-2011,Accountant & Auditor,Business & Finance,81680,52140,137920,1580000,5.4,124200,Bachelor's,49,accounting|finance
+budget-analyst,13-2031,Budget Analyst,Business & Finance,87930,57040,133030,49200,3.6,4100,Bachelor's,44,accounting|finance|economics
+tax-examiner,13-2081,Tax Examiner & Collector,Business & Finance,60600,36740,101300,56400,-2.4,3700,Bachelor's,61,accounting|finance
+insurance-underwriter,13-2053,Insurance Underwriter,Business & Finance,79880,50250,138510,104000,-4.4,8200,Bachelor's,64,finance|mathematics|business-administration
+compliance-officer,13-1041,Compliance Officer,Business & Finance,78420,46950,128970,375600,3.8,29500,Bachelor's,40,political-science|accounting|criminal-justice
+cost-estimator,13-1051,Cost Estimator,Business & Finance,77070,45390,124180,221400,-1.0,18000,Bachelor's,46,civil-engineering|supply-chain
+securities-sales-agent,41-3031,Securities & Financial Services Sales Agent,Sales,76900,39910,211680,493900,5.6,43100,Bachelor's,42,finance|economics
+management-analyst,13-1111,Management Analyst,Business & Finance,101190,57920,174410,1075000,9.0,92900,Bachelor's,35,business-administration|economics|industrial-engineering|political-science
+logistician,13-1081,Logistician,Business & Finance,80880,49760,128550,238000,17.3,24500,Bachelor's,38,supply-chain|industrial-engineering|business-administration
+human-resources-specialist,13-1071,Human Resources Specialist,Business & Finance,72910,45800,126360,976800,6.1,81000,Bachelor's,45,business-administration|psychology|sociology
+event-planner,13-1121,Meeting & Event Planner,Business & Finance,59440,36290,98310,150800,6.8,15800,Bachelor's,32,hospitality|communications|marketing
+sales-manager,11-2022,Sales Manager,Management,138060,64680,239200,592400,4.4,42100,Bachelor's,24,marketing|business-administration|international-business
+marketing-manager,11-2021,Marketing Manager,Management,161030,85710,239200,409400,6.1,34700,Bachelor's,27,marketing|communications|business-administration
+general-manager,11-1021,General & Operations Manager,Management,102950,50810,239200,3507000,5.9,308700,Bachelor's,26,business-administration|supply-chain|economics
+purchasing-manager,11-3061,Purchasing Manager,Management,136380,79440,213850,76200,5.2,5700,Bachelor's,34,supply-chain|business-administration|agriculture
+medical-health-manager,11-9111,Medical & Health Services Manager,Management,117960,69860,219270,560000,23.2,61400,Bachelor's,24,public-health|nursing|business-administration
+lodging-manager,11-9081,Lodging Manager,Management,68810,38160,124880,56400,4.7,4400,High school,33,hospitality|business-administration
+food-service-manager,11-9051,Food Service Manager,Management,65310,40340,105340,362900,5.8,39300,High school,35,hospitality|business-administration
+agricultural-manager,11-9013,Farmer & Agricultural Manager,Management,87980,41730,158030,926300,-3.8,82100,High school,30,agriculture|business-administration
+construction-manager,11-9021,Construction Manager,Management,106980,66750,180580,504900,9.2,46800,Bachelor's,19,civil-engineering|architecture|urban-planning
+school-principal,11-9032,School Principal,Education,103460,69570,161190,302800,0.8,21300,Master's,12,secondary-education|education
+public-relations-specialist,27-3031,Public Relations Specialist,Media & Communication,69780,39480,135330,305500,5.3,27800,Bachelor's,47,communications|journalism|marketing|english
+writer,27-3043,Writer & Author,Media & Communication,72270,39700,153910,148200,3.7,13500,Bachelor's,68,english|journalism|philosophy|communications
+editor,27-3041,Editor,Media & Communication,75020,40630,142360,120300,-4.3,11400,Bachelor's,66,english|journalism|communications
+reporter,27-3023,Reporter & Journalist,Media & Communication,57500,33530,125360,48500,-4.0,4600,Bachelor's,55,journalism|communications|english
+producer,27-2012,Producer & Director,Arts & Entertainment,83480,42880,194050,166400,6.8,15200,Bachelor's,27,film|communications|music
+film-editor,27-4032,Film & Video Editor,Arts & Entertainment,70570,40030,166350,37300,6.1,3200,Bachelor's,49,film|communications
+interpreter,27-3091,Interpreter & Translator,Media & Communication,59440,36160,101100,68700,1.6,6200,Bachelor's,71,foreign-languages|international-relations
+graphic-designer,27-1024,Graphic Designer,Arts & Entertainment,61300,37030,100450,265500,2.4,21900,Bachelor's,58,graphic-design|fine-arts|marketing
+ux-designer,15-1255,Web & Digital Interface Designer,Computer & Math,98540,50230,192180,113600,7.3,9800,Bachelor's,46,graphic-design|computer-science|psychology
+art-director,27-1011,Art Director,Arts & Entertainment,111040,62020,197920,138000,1.9,10900,Bachelor's,34,graphic-design|fine-arts|film
+interior-designer,27-1025,Interior Designer,Arts & Entertainment,64720,39750,106490,89500,3.8,8200,Bachelor's,32,architecture|fine-arts
+fine-artist,27-1013,Fine Artist,Arts & Entertainment,66020,28850,136430,26900,4.1,3000,Bachelor's,34,fine-arts
+musician,27-2042,Musician & Singer,Arts & Entertainment,41210,20480,105470,168400,1.4,24100,Bachelor's,25,music
+music-director,27-2041,Music Director & Composer,Arts & Entertainment,63540,33170,123920,64900,1.3,6000,Bachelor's,24,music
+curator,25-4012,Curator,Education,65720,39110,108330,15400,6.2,1700,Master's,21,history|anthropology|fine-arts
+architect,17-1011,Architect,Engineering,96690,59830,158890,131400,4.2,8400,Bachelor's,24,architecture|civil-engineering
+lawyer,23-1011,Lawyer,Legal,151160,70680,239200,861200,4.0,35600,Professional,33,political-science|philosophy|history|economics
+paralegal,23-2011,Paralegal & Legal Assistant,Legal,61010,39970,98090,376200,0.3,39000,Associate,62,political-science|criminal-justice|english
+police-officer,33-3051,Police Officer,Protective Service,76290,48190,121960,683300,3.0,63500,High school,9,criminal-justice|sociology
+detective,33-3021,Detective & Criminal Investigator,Protective Service,93580,54820,154560,113100,2.0,8600,High school,16,criminal-justice|political-science
+probation-officer,21-1092,Probation Officer,Community & Social Service,64520,44580,104190,90200,2.7,7700,Bachelor's,18,criminal-justice|social-work|sociology
+firefighter,33-2011,Firefighter,Protective Service,59530,34970,103460,337600,3.6,26900,Postsecondary non-degree,6,criminal-justice|public-health
+social-worker,21-1029,Social Worker,Community & Social Service,61330,39430,97470,772300,6.6,74700,Bachelor's,14,social-work|sociology|psychology|public-health
+counselor,21-1018,Substance Abuse & Mental Health Counselor,Community & Social Service,59190,39720,98000,466900,17.1,48300,Bachelor's,10,psychology|social-work
+health-educator,21-1091,Health Education Specialist,Community & Social Service,63000,39020,108480,132300,4.0,13300,Bachelor's,24,public-health|kinesiology
+school-counselor,21-1012,School & Career Counselor,Education,63090,42610,103030,352200,4.4,32800,Master's,13,psychology|education|secondary-education
+elementary-teacher,25-2021,Elementary School Teacher,Education,64190,47550,103320,1402400,-1.3,103200,Bachelor's,13,education|english
+high-school-teacher,25-2031,High School Teacher,Education,65940,48970,106550,1105600,0.6,67100,Bachelor's,15,secondary-education|history|mathematics|english
+special-education-teacher,25-2050,Special Education Teacher,Education,66970,48360,107050,475300,0.1,33300,Bachelor's,11,education|psychology
+instructional-coordinator,25-9031,Instructional Coordinator,Education,74720,46230,116280,212100,1.7,17700,Master's,29,education|secondary-education
+physician,29-1210,Physician,Healthcare,239200,74690,239200,812900,3.7,23600,Professional,9,pre-med|biology|chemistry
+registered-nurse,29-1141,Registered Nurse,Healthcare,93600,66030,135320,3391700,5.2,189100,Bachelor's,9,nursing|biology|pre-med
+nurse-practitioner,29-1171,Nurse Practitioner,Healthcare,129210,94530,168030,307200,40.1,31300,Master's,7,nursing
+physician-assistant,29-1071,Physician Assistant,Healthcare,133260,88600,175060,158800,20.4,12900,Master's,8,pre-med|biology|kinesiology
+pharmacist,29-1051,Pharmacist,Healthcare,137480,94850,170940,339800,5.0,15400,Professional,29,pharmacy|chemistry
+physical-therapist,29-1123,Physical Therapist,Healthcare,101020,72110,132990,259200,11.1,13200,Doctoral,6,kinesiology|pre-med|biology
+occupational-therapist,29-1122,Occupational Therapist,Healthcare,98340,67150,132600,151900,10.9,9400,Master's,6,kinesiology|psychology
+athletic-trainer,29-9091,Athletic Trainer,Healthcare,60250,44600,82040,34300,11.4,2800,Master's,8,kinesiology
+speech-language-pathologist,29-1127,Speech-Language Pathologist,Healthcare,95410,63020,129900,186000,15.1,13600,Master's,9,psychology|education
+dental-hygienist,29-1292,Dental Hygienist,Healthcare,94260,70480,122210,217500,7.1,15600,Associate,10,biology|pre-med
+radiologic-technologist,29-2034,Radiologic Technologist,Healthcare,77660,52890,110580,223100,5.1,15400,Associate,21,biology|pre-med
+fitness-trainer,39-9031,Fitness Trainer & Instructor,Personal Care,46180,27920,81500,379100,11.8,66700,High school,12,kinesiology
+electrician,47-2111,Electrician,Skilled Trades,62350,40450,106030,818700,9.5,81000,Apprenticeship,11,electrical-engineering
+plumber,47-2152,Plumber & Pipefitter,Skilled Trades,62970,39500,105150,504500,4.4,44000,Apprenticeship,9,civil-engineering
+hvac-technician,49-9021,HVAC Mechanic & Installer,Skilled Trades,59810,39180,91020,428900,8.1,40100,Postsecondary non-degree,13,mechanical-engineering
+wind-turbine-technician,49-9081,Wind Turbine Service Technician,Skilled Trades,62580,46370,90420,13300,50.0,2100,Postsecondary non-degree,12,electrical-engineering|environmental-science
+air-traffic-controller,53-2021,Air Traffic Controller,Transportation,144580,86500,212550,25000,1.3,2200,Associate,18,aerospace-engineering
+pilot,53-2011,Airline Pilot,Transportation,226600,113570,239200,108600,4.2,8000,Bachelor's,20,aerospace-engineering|physics
+real-estate-agent,41-9022,Real Estate Sales Agent,Sales,56320,30950,114480,174300,1.9,39900,High school,40,business-administration|finance|marketing
