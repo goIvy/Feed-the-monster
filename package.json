@@ -1,0 +1,13 @@
+{
+  "name": "public-voices",
+  "private": true,
+  "scripts": {
+    "build:motion": "esbuild scripts/framer-motion.entry.js --bundle --format=iife --global-name=FramerMotion --minify --target=es2019 --outfile=vendor/framer-motion.js"
+  },
+  "dependencies": {
+    "framer-motion": "^13.4.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

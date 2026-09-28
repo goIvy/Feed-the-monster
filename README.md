@@ -22,3 +22,17 @@ form-service URL (Formspree, a Google Apps Script web app, etc.). It receives a 
 
 Events, impromptu prompts, speech clock presets, and the ticker lines are plain arrays near the
 top of the `<script>` block (`EVENTS`, `PROMPTS`, `PRESETS`, `lines`).
+
+## Animation
+
+All animation runs through [Framer Motion](https://motion.dev)'s DOM API: scroll-triggered fades with
+staggered reveals, hover and press feedback on buttons, chips, and event cards, the marquee, the prompt
+flip, and the timecard flip. Everything is skipped for visitors who prefer reduced motion.
+
+The page has no build step, so Framer Motion is vendored as `vendor/framer-motion.js`. To update it:
+
+```bash
+npm install
+npm update framer-motion
+npm run build:motion
+```

@@ -110,15 +110,13 @@
   .mark-bars i { display: block; width: 3px; border-radius: 2px; background: var(--cobalt); }
   .nav ul { display: flex; gap: clamp(12px, 2.4vw, 28px); list-style: none; margin: 0; padding: 0; }
   .nav ul a { text-decoration: none; font-size: 15px; color: var(--muted); }
-  .nav ul a:hover { color: var(--ink); }
+  html:not(.has-motion) .nav ul a:hover { color: var(--ink); }
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     padding: 12px 20px; border-radius: 999px; border: 2px solid var(--ink);
     font: 700 15px/1 var(--body); text-decoration: none; cursor: pointer;
     background: transparent; color: var(--ink);
-    transition: transform .15s ease, background .15s ease, color .15s ease;
   }
-  .btn:hover { transform: translateY(-2px); }
   .btn.solid { background: var(--cobalt); border-color: var(--cobalt); color: var(--on-cobalt); }
   .btn.small { padding: 9px 14px; font-size: 14px; }
   @media (max-width: 720px) { .nav ul { display: none; } }
@@ -155,11 +153,9 @@
     background: var(--card); color: var(--on-card);
     overflow: hidden; padding-block: 14px;
   }
-  .marquee-track { display: flex; gap: 48px; width: max-content; animation: slide 60s linear infinite; }
+  .marquee-track { display: flex; gap: 48px; width: max-content; }
   .marquee-track span { font: 500 14px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
   .marquee-track span b { font-weight: 500; opacity: .6; margin-right: 10px; }
-  @keyframes slide { to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
   /* ---------- Events ---------- */
   .filters { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -209,9 +205,6 @@
     background: var(--card); color: var(--on-card); border-radius: 14px; padding: 24px;
     transform-origin: 50% 0;
   }
-  .prompt-box.flip { animation: flip .5s ease; }
-  @keyframes flip { 0% { transform: rotateX(80deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
-  @media (prefers-reduced-motion: reduce) { .prompt-box.flip { animation: none; } }
   .prompt-kind { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
   .prompt-text {
     font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85;
@@ -229,15 +222,11 @@
     background: var(--card); color: var(--on-card); border-radius: 12px;
     display: grid; place-items: center; position: relative;
     box-shadow: 0 18px 0 -8px color-mix(in srgb, var(--card) 45%, var(--ink));
-    transition: background .2s ease, color .2s ease;
   }
   .timecard::before { content: ""; position: absolute; top: 10px; width: 26px; height: 5px; border-radius: 3px; background: currentColor; opacity: .25; }
   .timecard b { font-family: var(--display); font-weight: 900; font-variation-settings: "wdth" 60; font-size: clamp(4rem, 9vw, 6rem); line-height: 1; }
   .timecard small { position: absolute; bottom: 12px; font: 500 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
   .timecard.stop { background: var(--stop); color: #fff; }
-  .timecard.pop { animation: pop .35s ease; }
-  @keyframes pop { 0% { transform: rotateY(90deg); } 100% { transform: none; } }
-  @media (prefers-reduced-motion: reduce) { .timecard.pop { animation: none; } }
   .readout { display: grid; gap: 12px; }
   .digits { font: 500 clamp(3rem, 8vw, 5.2rem)/1 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
   .digits.over { color: var(--stop); }
@@ -489,9 +478,19 @@
   </div>
 </footer>
 
+<script src="vendor/framer-motion.js"></script>
 <script>
 (() => {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Motion: every animation on the page runs through Framer Motion ---------- */
+  // If the vendored bundle is missing, or the visitor prefers reduced motion,
+  // `motion` is null and the page renders without any animation.
+  const FM = window.FramerMotion;
+  const motion = FM && !reduce ? FM : null;
+  const EASE_OUT = [0.22, 1, 0.36, 1];
+  const SPRING = { type: "spring", stiffness: 420, damping: 28 };
+  const token = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
   /* ---------- Kinetic headline: letters move like a voice meter ---------- */
   const voice = document.getElementById("voice");
@@ -628,7 +627,14 @@
     btn.addEventListener("click", () => {
       const f = btn.dataset.filter;
       document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === btn)));
-      grid.querySelectorAll(".event").forEach(card => { card.hidden = f !== "all" && card.dataset.type !== f; });
+      const shown = [];
+      grid.querySelectorAll(".event").forEach(card => {
+        card.hidden = f !== "all" && card.dataset.type !== f;
+        if (!card.hidden && card.dataset.revealed) shown.push(card);
+      });
+      if (motion && shown.length) {
+        motion.animate(shown, { opacity: [0, 1], y: [16, 0] }, { duration: 0.45, ease: EASE_OUT, delay: motion.stagger(0.05) });
+      }
     });
   });
 
@@ -659,7 +665,7 @@
     lastPrompt = n;
     document.getElementById("prompt-kind").textContent = PROMPTS[n][0];
     document.getElementById("prompt-text").textContent = PROMPTS[n][1];
-    box.classList.remove("flip"); void box.offsetWidth; box.classList.add("flip");
+    if (motion) motion.animate(box, { rotateX: [80, 0], opacity: [0, 1] }, { duration: 0.5, ease: EASE_OUT });
   };
   document.getElementById("draw").addEventListener("click", draw);
   document.getElementById("draw-go").addEventListener("click", () => {
@@ -704,7 +710,7 @@
     if (key !== lastCard) {
       cardNum.textContent = num; cardCap.textContent = cap;
       card.classList.toggle("stop", stop);
-      if (lastCard && !reduce) { card.classList.remove("pop"); void card.offsetWidth; card.classList.add("pop"); }
+      if (lastCard && motion) motion.animate(card, { rotateY: [90, 0] }, { duration: 0.35, ease: EASE_OUT });
       lastCard = key;
     }
     cardNum.style.fontSize = num.length > 2 ? "clamp(2.2rem, 5vw, 3rem)" : "";
@@ -777,13 +783,14 @@
     data.events = [...form.querySelectorAll('input[name="events"]:checked')].map(i => i.value);
     const name = (data.name || "").trim();
     const email = (data.email || "").trim();
-    if (!name) { err.textContent = "Add your name so a coach knows who to look for."; err.hidden = false; $("f-name").focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Enter an email like name@school.org so we can send practice times."; err.hidden = false; $("f-email").focus(); return; }
+    if (!name) { err.textContent = "Add your name so a coach knows who to look for."; err.hidden = false; appear(err); $("f-name").focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = "Enter an email like name@school.org so we can send practice times."; err.hidden = false; appear(err); $("f-email").focus(); return; }
     err.hidden = true;
     const first = name.split(/\s+/)[0];
     if (!FORM_ENDPOINT) {
       done.innerHTML = `<strong>Almost there, ${first.replace(/[<>&"]/g, "")}.</strong><span>Online sign-ups aren't connected yet, so nothing was sent. Bring this to a coach or the next open mic night.</span>`;
       done.hidden = false;
+      appear(done);
       return;
     }
     try {
@@ -791,12 +798,71 @@
       if (!res.ok) throw new Error(res.status);
       done.innerHTML = `<strong>You're on the list, ${first.replace(/[<>&"]/g, "")}.</strong><span>A coach will email you practice times and the date of the next open mic.</span>`;
       done.hidden = false;
+      appear(done);
       form.reset();
     } catch {
       err.textContent = "Your sign-up didn't go through. Check your connection and try again.";
       err.hidden = false;
+      appear(err);
     }
   });
+
+  /* ---------- Motion: marquee, scroll reveals, hover and press ---------- */
+  function appear(el) {
+    if (motion) motion.animate(el, { opacity: [0, 1], y: [8, 0] }, { duration: 0.35, ease: EASE_OUT });
+  }
+
+  if (motion) {
+    const { animate, inView, stagger, hover, press } = motion;
+    document.documentElement.classList.add("has-motion");
+
+    animate("#marquee", { x: ["0%", "-50%"] }, { duration: 60, ease: "linear", repeat: Infinity });
+
+    // Scroll-triggered fades. Elements that enter the viewport in the same frame
+    // are revealed together, staggered in document order.
+    const REVEAL = [
+      ".hero .label span", ".hero-foot .lede", ".hero-actions .btn", "#hint",
+      "section .section-head > *", ".legend", ".event", ".footnote",
+      ".panel", ".season li", ".lingo > div", "#join-form",
+    ].join(",");
+    let batch = [];
+    const flush = () => {
+      const els = batch.sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+      batch = [];
+      animate(els, { opacity: [0, 1], y: [28, 0] }, { duration: 0.7, ease: EASE_OUT, delay: stagger(0.07) });
+    };
+    document.querySelectorAll(REVEAL).forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(28px)";
+    });
+    inView(REVEAL, el => {
+      el.dataset.revealed = "1";
+      if (!batch.length) requestAnimationFrame(flush);
+      batch.push(el);
+    }, { margin: "0px 0px -8% 0px" });
+
+    // Hover: buttons and chips rise, event cards lift onto a hard cobalt shadow,
+    // nav links ease to full ink.
+    hover(".btn, .chip, .picks span", el => {
+      animate(el, { y: -2 }, SPRING);
+      return () => animate(el, { y: 0 }, SPRING);
+    });
+    hover(".event", el => {
+      const c = token("--cobalt");
+      animate(el, { x: -4, y: -4, boxShadow: `6px 6px 0px 0px ${c}` }, SPRING);
+      return () => animate(el, { x: 0, y: 0, boxShadow: `0px 0px 0px 0px ${c}` }, SPRING)
+        .then(() => { el.style.boxShadow = ""; });
+    });
+    hover(".nav ul a", el => {
+      animate(el, { color: token("--ink") }, { duration: 0.2 });
+      return () => animate(el, { color: token("--muted") }, { duration: 0.2 })
+        .then(() => { el.style.color = ""; });
+    });
+    press(".btn, .chip", el => {
+      animate(el, { scale: 0.96 }, SPRING);
+      return () => animate(el, { scale: 1 }, SPRING);
+    });
+  }
 })();
 </script>
 </body>
