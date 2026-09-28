@@ -3,7 +3,7 @@
 import { Check, Download, Link2, Printer, X } from "lucide-react";
 import { scaleLinear } from "d3-scale";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import {
   Bar,
@@ -28,6 +28,7 @@ import { Segmented } from "@/components/ui/segmented";
 import { AXIS_TICK, SERIES } from "@/lib/chart";
 import { simulatePath, type PathResult, type Residency } from "@/lib/engine";
 import { pct, usd, usdCompact } from "@/lib/format";
+import { navigate } from "@/lib/navigate";
 import { cn } from "@/lib/utils";
 import { buildPathInput, getCollege, getMajor } from "@/services/catalog";
 import { collegeOptions, majorOptions } from "@/services/options";
@@ -106,7 +107,6 @@ const RADAR_AXES: { key: string; label: string; get: (m: CollegeMetrics) => numb
 export function CollegeCompare() {
   const params = useSearchParams();
   const router = useRouter();
-  const pathname = usePathname();
   const ids = (params.get("ids") ?? "")
     .split(",")
     .filter((id) => getCollege(id))
@@ -125,7 +125,7 @@ export function CollegeCompare() {
     if (nIds.length) q.set("ids", nIds.join(","));
     if (nMajor) q.set("major", nMajor);
     if (nRes === "out-of-state") q.set("res", "out");
-    router.replace(`${pathname}?${q.toString()}`, { scroll: false });
+    navigate(router, `/colleges/compare?${q.toString()}`, { replace: true });
   };
 
   // Cheap to recompute (a few dozen deterministic simulations), so no manual memoization.

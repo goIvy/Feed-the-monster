@@ -29,6 +29,7 @@ import { useStoredState } from "@/hooks/use-stored-state";
 import { MUTED_SERIES, SERIES } from "@/lib/chart";
 import { simulatePath, type PathResult } from "@/lib/engine";
 import { signedPct, usd, usdCompact } from "@/lib/format";
+import { navigate } from "@/lib/navigate";
 import { cn } from "@/lib/utils";
 import { buildPathInput, getMajor, getOccupation } from "@/services/catalog";
 import { AssumptionsPanel, FACTORS, type Factor } from "./assumptions-panel";
@@ -113,7 +114,7 @@ export function Dashboard() {
 
   const saveShared = () => {
     setStored(state);
-    router.replace("/dashboard");
+    navigate(router, "/dashboard", { replace: true });
   };
 
   const insight = useMemo(() => buildInsight(results), [results]);

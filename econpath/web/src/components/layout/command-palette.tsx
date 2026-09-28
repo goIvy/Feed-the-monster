@@ -1,5 +1,6 @@
 "use client";
 
+import { navigate } from "@/lib/navigate";
 import { Command } from "cmdk";
 import {
   ArrowRight,
@@ -69,7 +70,7 @@ export function CommandPaletteProvider({ children }: { children: React.ReactNode
     (href: string) => {
       setOpen(false);
       setQuery("");
-      router.push(href);
+      navigate(router, href);
     },
     [router],
   );

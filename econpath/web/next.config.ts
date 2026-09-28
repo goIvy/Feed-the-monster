@@ -1,8 +1,13 @@
 import type { NextConfig } from "next";
 
+const staticExport = process.env.STATIC_EXPORT === "1";
+
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // STATIC_EXPORT=1 builds a plain-files version of the site (no server) into out/.
+  ...(staticExport ? { output: "export" as const, trailingSlash: true, images: { unoptimized: true } } : {}),
   async headers() {
+    if (staticExport) return [];
     return [
       {
         source: "/:path*",

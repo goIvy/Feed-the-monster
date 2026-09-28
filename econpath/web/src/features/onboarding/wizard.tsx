@@ -31,6 +31,7 @@ import {
   type Profile,
   type Stage,
 } from "@/features/dashboard/state";
+import { navigate } from "@/lib/navigate";
 import { cn } from "@/lib/utils";
 import { careerOptions, cityOptions, collegeOptions, majorOptions } from "@/services/options";
 
@@ -139,7 +140,7 @@ export function OnboardingWizard() {
     } catch {
       // Storage can be unavailable (private mode); the dashboard falls back to defaults.
     }
-    router.push("/dashboard?welcome=1");
+    navigate(router, "/dashboard?welcome=1");
   };
 
   const answered: Record<StepKey, boolean> = {
