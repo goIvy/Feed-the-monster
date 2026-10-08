@@ -22,3 +22,31 @@ form-service URL (Formspree, a Google Apps Script web app, etc.). It receives a 
 
 Events, impromptu prompts, speech clock presets, and the ticker lines are plain arrays near the
 top of the `<script>` block (`EVENTS`, `PROMPTS`, `PRESETS`, `lines`).
+
+---
+
+# Future Voices
+
+`future-voices/index.html` is the website for **Future Voices**, a Feed the Monster program that
+teaches young people public speaking, confidence, and speech & debate through games and activities.
+On GitHub Pages it lives at `/future-voices/`.
+
+It's one self-contained page with:
+
+- **Quick debate card** (hero): draws a kid-friendly topic, assigns a side, and runs a 60-second speaking clock.
+- **Program pillars**: confidence, public speaking, speech & debate.
+- **Activities**: 12 games, filterable by skill.
+- **A 60-minute chapter meeting**, drawn to scale.
+- **Five-level skill path**: Spark, Story, Stage, Spar, Showcase.
+- **Chapters**: roles, four steps to start one, a starter kit, an application form, and a chapter directory.
+- **FAQ**.
+
+## Editing Future Voices
+
+Everything you'd change often is a plain list near the top of the `<script>` block:
+`TOPICS` (debate topics), `GAMES` (activities), `MEETING` (meeting agenda), and `CHAPTERS`
+(the directory: add `{ name, place, since }` once a chapter holds its first meeting).
+
+To receive chapter applications, set `FORM_ENDPOINT` to a form-service URL (Formspree, a Google
+Apps Script web app, etc.). It receives a JSON POST with `role`, `name`, `email`, `organization`,
+`location`, `ages`, and `why`.

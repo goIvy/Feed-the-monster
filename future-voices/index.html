@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Future Voices</title>
+<meta name="description" content="Future Voices is a Feed the Monster program that helps young people build confidence, speak in public and learn speech and debate through fun, hands-on activities. Start a chapter in your school or community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Figtree:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a bright "rehearsal room" — mint paper, deep green ink, tangerine for the voice,
+     sun-yellow for game cards. One loud moment (the hero debate card); everything else quiet. */
+  :root {
+    --bg: #eaf3ef;
+    --surface: #ffffff;
+    --ink: #0f2e29;
+    --muted: #4c6a64;
+    --line: #c9dcd6;
+    --voice: #ff5e2e;
+    --on-voice: #ffffff;
+    --sun: #ffd447;
+    --on-sun: #0f2e29;
+    --deep: #0f2e29;
+    --on-deep: #eaf3ef;
+    --soft: #d7ebe4;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+    --mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --wrap: 1160px;
+    --gutter: clamp(16px, 4vw, 40px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0b1f1b;
+      --surface: #132b26;
+      --ink: #e6f2ee;
+      --muted: #9dbab3;
+      --line: #24423b;
+      --voice: #ff7a52;
+      --on-voice: #1a0c06;
+      --sun: #ffd447;
+      --on-sun: #0f2e29;
+      --deep: #183731;
+      --on-deep: #e6f2ee;
+      --soft: #17332d;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0b1f1b;
+    --surface: #132b26;
+    --ink: #e6f2ee;
+    --muted: #9dbab3;
+    --line: #24423b;
+    --voice: #ff7a52;
+    --on-voice: #1a0c06;
+    --sun: #ffd447;
+    --on-sun: #0f2e29;
+    --deep: #183731;
+    --on-deep: #e6f2ee;
+    --soft: #17332d;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  :focus-visible { outline: 3px solid var(--voice); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; font-family: var(--display); }
+  p { margin: 0; }
+  ul { margin: 0; padding: 0; }
+  .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+  .eyebrow {
+    font: 500 12px/1.2 var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .h2 {
+    font-weight: 800;
+    font-variation-settings: "wdth" 80, "opsz" 96;
+    font-size: clamp(2.2rem, 5.4vw, 3.9rem);
+    line-height: .98;
+    letter-spacing: -.025em;
+  }
+  .lede { color: var(--muted); max-width: 60ch; font-size: 1.08rem; }
+  section { padding-block: clamp(64px, 9vw, 112px); }
+  .section-head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 52px); max-width: 760px; }
+  .hl { color: var(--voice); }
+
+  /* ---------- Buttons & chips ---------- */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 13px 22px; border-radius: 14px; border: 2px solid var(--ink);
+    font: 700 15px/1 var(--body); text-decoration: none; cursor: pointer;
+    background: transparent; color: var(--ink);
+    box-shadow: 0 3px 0 var(--ink);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 var(--ink); }
+  .btn:active { transform: translateY(3px); box-shadow: 0 0 0 var(--ink); }
+  .btn.voice { background: var(--voice); color: var(--on-voice); }
+  .btn.small { padding: 9px 14px; font-size: 14px; border-radius: 11px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font: 500 12px/1 var(--mono); letter-spacing: .04em;
+    padding: 6px 9px; border-radius: 999px;
+    background: var(--soft); color: var(--ink);
+    white-space: nowrap;
+  }
+  .chip.confidence { background: var(--sun); color: var(--on-sun); }
+  .chip.speaking { background: var(--voice); color: var(--on-voice); }
+  .chip.debate { background: var(--deep); color: var(--on-deep); }
+
+  /* ---------- Nav ---------- */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+  .mark { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .mark svg { width: 34px; height: 34px; flex: none; }
+  .mark b { display: block; font: 800 19px/1 var(--display); font-variation-settings: "wdth" 85; letter-spacing: -.01em; }
+  .mark small { display: block; font: 500 10.5px/1.3 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+  .nav ul { display: flex; gap: clamp(14px, 2.4vw, 28px); list-style: none; }
+  .nav ul a { text-decoration: none; font-size: 15px; font-weight: 600; color: var(--muted); }
+  .nav ul a:hover { color: var(--ink); }
+  @media (max-width: 860px) { .nav ul { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(40px, 6vw, 80px) clamp(56px, 8vw, 96px); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
+  .hero h1 {
+    font-weight: 800;
+    font-variation-settings: "wdth" 78, "opsz" 96;
+    font-size: clamp(3rem, 8.4vw, 6.6rem);
+    line-height: .92;
+    letter-spacing: -.035em;
+    margin-block: 18px 24px;
+  }
+  .hero h1 .said { position: relative; color: var(--voice); white-space: nowrap; }
+  .hero h1 .said svg { position: absolute; left: -2%; bottom: -.16em; width: 104%; height: .32em; overflow: visible; }
+  .hero h1 .said path { fill: none; stroke: var(--sun); stroke-width: 7; stroke-linecap: round; }
+  .hero .lede { color: var(--ink); font-size: clamp(1.1rem, 1.7vw, 1.28rem); line-height: 1.55; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .hero-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 30px; }
+  .hero-facts span { font: 500 13px/1.3 var(--mono); color: var(--muted); }
+  .hero-facts span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--voice); margin-right: 8px; vertical-align: 1px; }
+  @media (max-width: 880px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  /* Debate card: the one loud object on the page */
+  .debate {
+    position: relative;
+    background: var(--sun); color: var(--on-sun);
+    border: 2px solid var(--on-sun);
+    border-radius: 26px;
+    padding: clamp(22px, 3vw, 30px);
+    box-shadow: 8px 8px 0 var(--ink);
+    transform: rotate(1.4deg);
+    display: grid; gap: 18px;
+  }
+  .debate-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .debate-top .eyebrow { color: var(--on-sun); opacity: .8; }
+  .side {
+    font: 800 13px/1 var(--display); letter-spacing: .08em; text-transform: uppercase;
+    padding: 8px 12px; border-radius: 999px; border: 2px solid var(--on-sun);
+    background: var(--on-sun); color: var(--sun);
+    font-variation-settings: "wdth" 90;
+  }
+  .side.against { background: transparent; color: var(--on-sun); }
+  .topic {
+    font: 700 clamp(1.5rem, 2.8vw, 2.05rem)/1.12 var(--display);
+    font-variation-settings: "wdth" 85, "opsz" 48;
+    letter-spacing: -.015em;
+    min-height: 3.4em;
+    display: flex; align-items: center;
+  }
+  .topic.flip { animation: flip .38s ease; }
+  @keyframes flip { 0% { opacity: .2; transform: translateY(8px); } 100% { opacity: 1; transform: none; } }
+  .clock { display: flex; align-items: center; gap: 16px; }
+  .ring { width: 74px; height: 74px; flex: none; }
+  .ring circle { fill: none; stroke-width: 7; }
+  .ring .track { stroke: color-mix(in srgb, var(--on-sun) 18%, transparent); }
+  .ring .fill { stroke: var(--on-sun); stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; }
+  .ring text { font: 500 17px var(--mono); fill: var(--on-sun); text-anchor: middle; dominant-baseline: central; font-variant-numeric: tabular-nums; }
+  .clock p { font-size: 14.5px; line-height: 1.45; }
+  .clock p b { display: block; font-size: 15.5px; }
+  .debate-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  .debate .btn { border-color: var(--on-sun); color: var(--on-sun); box-shadow: 0 3px 0 var(--on-sun); background: transparent; }
+  .debate .btn.go { background: var(--on-sun); color: var(--sun); }
+  .debate .btn:active { box-shadow: 0 0 0 var(--on-sun); }
+  .bubble-tail { position: absolute; left: 42px; bottom: -22px; width: 40px; height: 24px; }
+  .bubble-tail path { fill: var(--sun); stroke: var(--on-sun); stroke-width: 2; stroke-linejoin: round; }
+  .debate-caption { margin-top: 38px; font: 400 13px/1.45 var(--mono); color: var(--muted); padding-left: 8px; }
+
+  /* ---------- Ticker ---------- */
+  .ticker { background: var(--deep); color: var(--on-deep); overflow: hidden; border-block: 2px solid var(--ink); }
+  .ticker-track { display: flex; gap: 44px; padding-block: 15px; width: max-content; animation: slide 46s linear infinite; }
+  .ticker span { font: 700 1.05rem/1 var(--display); font-variation-settings: "wdth" 85; white-space: nowrap; display: flex; gap: 44px; align-items: center; }
+  .ticker span::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--voice); }
+  @keyframes slide { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+  /* ---------- Pillars ---------- */
+  .pillars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+  .pillar { display: grid; gap: 14px; align-content: start; padding-top: 22px; border-top: 3px solid var(--ink); }
+  .pillar .tag { width: 48px; height: 48px; }
+  .pillar h3 { font-weight: 800; font-size: 1.6rem; font-variation-settings: "wdth" 85; letter-spacing: -.015em; line-height: 1.05; }
+  .pillar > p { color: var(--muted); }
+  .pillar ul { list-style: none; display: grid; gap: 8px; }
+  .pillar li { display: flex; gap: 10px; align-items: baseline; font-size: 15.5px; }
+  .pillar li::before { content: "✓"; font-weight: 700; color: var(--voice); flex: none; }
+  @media (max-width: 820px) { .pillars { grid-template-columns: 1fr; gap: 36px; } }
+
+  /* ---------- Activities ---------- */
+  .activities { background: var(--surface); border-block: 1px solid var(--line); }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 26px; }
+  .filters button {
+    font: 600 14px/1 var(--body); padding: 10px 16px; border-radius: 999px; cursor: pointer;
+    background: transparent; color: var(--ink); border: 2px solid var(--line);
+  }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 255px), 1fr)); gap: 16px; }
+  .game {
+    display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px;
+    padding: 20px; border-radius: 18px; background: var(--bg); border: 1px solid var(--line);
+  }
+  .game header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .game h3 { font-size: 1.32rem; font-weight: 800; font-variation-settings: "wdth" 88; letter-spacing: -.01em; line-height: 1.1; }
+  .game p { color: var(--muted); font-size: 15px; line-height: 1.5; }
+  .game footer { display: flex; gap: 14px; font: 500 12.5px/1.2 var(--mono); color: var(--muted); padding-top: 12px; border-top: 1px dashed var(--line); }
+  .game footer span { display: inline-flex; align-items: center; gap: 6px; }
+  .game footer svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .games-note { margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+
+  /* ---------- Meeting (drawn to scale) ---------- */
+  .meeting-bar { display: flex; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; min-height: 92px; }
+  .seg { padding: 12px 12px; display: grid; align-content: space-between; gap: 8px; min-width: 0; border-right: 2px solid var(--ink); }
+  .seg:last-child { border-right: 0; }
+  .seg b { font: 700 15px/1.15 var(--display); font-variation-settings: "wdth" 85; }
+  .seg small { font: 500 12px/1 var(--mono); font-variant-numeric: tabular-nums; }
+  .seg.s1 { background: var(--sun); color: var(--on-sun); }
+  .seg.s2 { background: var(--surface); color: var(--ink); }
+  .seg.s3 { background: var(--voice); color: var(--on-voice); }
+  .seg.s4 { background: var(--deep); color: var(--on-deep); }
+  .seg.s5 { background: var(--soft); color: var(--ink); }
+  .scale { display: flex; justify-content: space-between; margin-top: 8px; font: 500 12px/1 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .meeting-detail { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; margin-top: 30px; }
+  .meeting-detail div { display: grid; gap: 6px; align-content: start; }
+  .meeting-detail b { font-size: 15px; }
+  .meeting-detail p { font-size: 14.5px; color: var(--muted); line-height: 1.5; }
+  @media (max-width: 820px) {
+    .meeting-bar { flex-direction: column; min-height: 0; }
+    .seg { border-right: 0; border-bottom: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; flex: none !important; }
+    .seg:last-child { border-bottom: 0; }
+    .scale { display: none; }
+    .meeting-detail { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) { .meeting-detail { grid-template-columns: 1fr; } }
+
+  /* ---------- Levels ---------- */
+  .path { background: var(--deep); color: var(--on-deep); }
+  .path .eyebrow, .path .lede { color: color-mix(in srgb, var(--on-deep) 72%, transparent); }
+  .levels { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; counter-reset: lvl; }
+  .level { display: grid; gap: 10px; align-content: start; padding: 20px 18px 22px; border-radius: 18px; border: 1px solid color-mix(in srgb, var(--on-deep) 22%, transparent); position: relative; }
+  .level .num { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--sun); }
+  .level h3 { font-size: 1.7rem; font-weight: 800; font-variation-settings: "wdth" 80; letter-spacing: -.02em; line-height: 1; }
+  .level p { font-size: 14.5px; line-height: 1.5; color: color-mix(in srgb, var(--on-deep) 80%, transparent); }
+  .level .badge { font: 500 12px/1.35 var(--mono); padding-top: 10px; border-top: 1px dashed color-mix(in srgb, var(--on-deep) 28%, transparent); color: var(--on-deep); }
+  .level:last-child { background: var(--voice); color: var(--on-voice); border-color: var(--voice); }
+  .level:last-child p, .level:last-child .badge, .level:last-child .num { color: var(--on-voice); }
+  .level:last-child .badge { border-top-color: color-mix(in srgb, var(--on-voice) 40%, transparent); }
+  @media (max-width: 980px) { .levels { grid-template-columns: repeat(2, minmax(0, 1fr)); } .level:last-child { grid-column: 1 / -1; } }
+  @media (max-width: 520px) { .levels { grid-template-columns: 1fr; } }
+
+  /* ---------- Chapters ---------- */
+  .roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: clamp(48px, 7vw, 80px); }
+  .role { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; }
+  .role .who { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--voice); }
+  .role h3 { font-size: 1.4rem; font-weight: 800; font-variation-settings: "wdth" 85; line-height: 1.1; }
+  .role p { color: var(--muted); font-size: 15.5px; }
+  @media (max-width: 820px) { .roles { grid-template-columns: 1fr; } }
+
+  .start-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+  @media (max-width: 900px) { .start-grid { grid-template-columns: 1fr; } }
+  .steps { list-style: none; display: grid; gap: 0; counter-reset: step; }
+  .steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--line); }
+  .steps li:first-child { padding-top: 0; }
+  .steps li::before {
+    counter-increment: step; content: counter(step);
+    width: 44px; height: 44px; border-radius: 50%;
+    display: grid; place-items: center;
+    font: 800 1.15rem/1 var(--display); border: 2px solid var(--ink);
+  }
+  .steps b { display: block; font-size: 1.08rem; margin-bottom: 4px; }
+  .steps p { color: var(--muted); font-size: 15.5px; }
+  .kit { margin-top: 30px; padding: 22px; border-radius: 18px; background: var(--soft); display: grid; gap: 12px; }
+  .kit h3 { font-size: 1.15rem; font-weight: 800; }
+  .kit ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 18px; }
+  .kit li { font-size: 15px; display: flex; gap: 8px; }
+  .kit li::before { content: "→"; color: var(--voice); font-weight: 700; }
+  @media (max-width: 480px) { .kit ul { grid-template-columns: 1fr; } }
+
+  /* Form */
+  .form-card { background: var(--surface); border: 2px solid var(--ink); border-radius: 24px; padding: clamp(22px, 3.4vw, 34px); box-shadow: 8px 8px 0 var(--voice); }
+  .form-card h3 { font-size: 1.7rem; font-weight: 800; font-variation-settings: "wdth" 82; letter-spacing: -.015em; margin-bottom: 6px; }
+  .form-card > p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
+  form { display: grid; gap: 16px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .two { grid-template-columns: 1fr; } }
+  .field { display: grid; gap: 6px; min-width: 0; }
+  .field label, .field legend { font-weight: 700; font-size: 14px; }
+  .field .opt { font-weight: 400; color: var(--muted); }
+  input, select, textarea {
+    width: 100%; font: 16px/1.4 var(--body); color: var(--ink);
+    background: var(--bg); border: 2px solid var(--line); border-radius: 12px; padding: 11px 13px;
+  }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink); }
+  textarea { resize: vertical; }
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .seg-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .seg-pick label { position: relative; }
+  .seg-pick input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .seg-pick span { display: inline-block; padding: 9px 14px; border-radius: 999px; border: 2px solid var(--line); font-size: 14.5px; font-weight: 600; cursor: pointer; }
+  .seg-pick input:checked + span { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .seg-pick input:focus-visible + span { outline: 3px solid var(--voice); outline-offset: 2px; }
+  .error { color: var(--voice); font-weight: 700; font-size: 14.5px; }
+  .done { padding: 18px; border-radius: 14px; background: var(--sun); color: var(--on-sun); font-weight: 600; }
+
+  /* Directory */
+  .directory { margin-top: clamp(56px, 8vw, 96px); display: grid; gap: 20px; }
+  .directory-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 24px; }
+  .directory-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; font-variation-settings: "wdth" 80; letter-spacing: -.02em; }
+  .chapter-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; list-style: none; }
+  .chapter { padding: 18px 20px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 4px; }
+  .chapter b { font-size: 1.05rem; }
+  .chapter span { font-size: 14px; color: var(--muted); }
+  .empty {
+    display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center;
+    padding: 24px; border-radius: 20px; border: 2px dashed var(--line);
+  }
+  .empty svg { width: 64px; height: 64px; }
+  .empty b { display: block; font-size: 1.12rem; margin-bottom: 4px; }
+  .empty p { color: var(--muted); font-size: 15px; max-width: 62ch; }
+  @media (max-width: 520px) { .empty { grid-template-columns: 1fr; } }
+
+  /* ---------- FAQ ---------- */
+  .faq-section { background: var(--surface); border-top: 1px solid var(--line); }
+  .faq { display: grid; gap: 0; max-width: 820px; }
+  details { border-bottom: 1px solid var(--line); }
+  summary {
+    list-style: none; cursor: pointer; padding-block: 20px;
+    display: flex; justify-content: space-between; gap: 16px; align-items: center;
+    font: 700 1.15rem/1.3 var(--display); font-variation-settings: "wdth" 90;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font: 400 1.6rem/1 var(--body); color: var(--voice); transition: transform .2s ease; flex: none; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { padding-bottom: 20px; color: var(--muted); max-width: 66ch; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--deep); color: var(--on-deep); padding-block: 56px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; }
+  footer .mark small { color: color-mix(in srgb, var(--on-deep) 70%, transparent); }
+  footer p { color: color-mix(in srgb, var(--on-deep) 75%, transparent); font-size: 15px; max-width: 44ch; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Future Voices home">
+      <svg viewBox="0 0 34 34" aria-hidden="true">
+        <path d="M4 6a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H14l-7 7v-7H8a4 4 0 0 1-4-4z" fill="var(--voice)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/>
+        <g stroke="var(--on-voice)" stroke-width="2.6" stroke-linecap="round"><path d="M11 11v4"/><path d="M15 8.5v9"/><path d="M19 10v6"/><path d="M23 12v2"/></g>
+      </svg>
+      <span><b>Future Voices</b><small>A Feed the Monster program</small></span>
+    </a>
+    <ul>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#path">Skill path</a></li>
+      <li><a href="#chapters">Chapters</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn voice small" href="#start">Start a chapter</a>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Public speaking · Confidence · Speech &amp; debate</p>
+        <h1>Every kid has something <span class="said">worth saying<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 50 4, 120 3, 197 11"/></svg></span>.</h1>
+        <p class="lede">Future Voices helps young people stand up, speak clearly and argue a point. Every meeting runs on games, challenges and friendly debates, so students build real confidence while they're busy having fun.</p>
+        <div class="hero-actions">
+          <a class="btn voice" href="#start">Start a chapter</a>
+          <a class="btn" href="#activities">See the activities</a>
+        </div>
+        <div class="hero-facts">
+          <span>Student-led chapters</span>
+          <span>Games in every meeting</span>
+          <span>Five-level skill path</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="debate" aria-labelledby="debate-label">
+          <div class="debate-top">
+            <span class="eyebrow" id="debate-label">Quick debate</span>
+            <span class="side" id="side">Argue for</span>
+          </div>
+          <p class="topic" id="topic" aria-live="polite">Kids should be allowed to pick one day a year to be the teacher.</p>
+          <div class="clock">
+            <svg class="ring" viewBox="0 0 74 74" role="timer" aria-label="Time left">
+              <circle class="track" cx="37" cy="37" r="31"/>
+              <circle class="fill" id="ring-fill" cx="37" cy="37" r="31"/>
+              <text x="37" y="38" id="ring-text">0:60</text>
+            </svg>
+            <p id="clock-tip"><b>You get 60 seconds.</b>Give one reason and one example. Finish with “That's why…”.</p>
+          </div>
+          <div class="debate-actions">
+            <button class="btn go" type="button" id="go">Start 60 seconds</button>
+            <button class="btn" type="button" id="spin">New topic</button>
+          </div>
+          <svg class="bubble-tail" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 0 L 6 22 L 30 0"/></svg>
+        </div>
+        <p class="debate-caption">Try it with a friend: one argues for, one against. Swap and go again.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
+  <section id="program">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The program</p>
+        <h2 class="h2">Three things we build, one meeting at a time</h2>
+        <p class="lede">Speaking skills only stick when students feel safe enough to try. So we build confidence first, then technique, then the thinking that wins a debate.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <svg class="tag" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="var(--sun)" stroke="var(--ink)" stroke-width="2"/><path d="M24 12l3.5 7.6 8.3.9-6.2 5.6 1.7 8.2L24 30.1l-7.3 4.2 1.7-8.2-6.2-5.6 8.3-.9z" fill="var(--ink)"/></svg>
+          <h3>Confidence</h3>
+          <p>Low-pressure games make it normal to stand up, make mistakes and keep going.</p>
+          <ul>
+            <li>Speak in front of a group without freezing</li>
+            <li>Shake off a mistake and keep talking</li>
+            <li>Give and take kind, useful feedback</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <svg class="tag" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="var(--voice)" stroke="var(--ink)" stroke-width="2"/><rect x="19" y="10" width="10" height="18" rx="5" fill="var(--on-voice)"/><path d="M14 24a10 10 0 0 0 20 0M24 34v5M18 39h12" stroke="var(--on-voice)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg>
+          <h3>Public speaking</h3>
+          <p>The craft of a good talk: a clear structure, a strong voice and body language that backs you up.</p>
+          <ul>
+            <li>Open with a hook and close with a point</li>
+            <li>Use pace, pauses and volume on purpose</li>
+            <li>Cut the “um”s and keep eye contact</li>
+          </ul>
+        </article>
+        <article class="pillar">
+          <svg class="tag" viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="14" fill="var(--deep)" stroke="var(--ink)" stroke-width="2"/><path d="M11 15h15v9H17l-4 4v-4h-2z" fill="var(--sun)"/><path d="M37 21H24v9h7l4 4v-4h2z" fill="var(--voice)"/></svg>
+          <h3>Speech &amp; debate</h3>
+          <p>How to build an argument, answer the other side and think on your feet.</p>
+          <ul>
+            <li>Make a claim, back it up, say why it matters</li>
+            <li>Listen closely and respond, not just react</li>
+            <li>Speak impromptu with one minute to prepare</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="activities" class="activities">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Activities</p>
+        <h2 class="h2">The games we actually play</h2>
+        <p class="lede">Every activity takes less than 20 minutes, needs almost no materials and trains one skill on purpose. Chapter leads get the full playbook.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter activities by skill" id="filters">
+        <button type="button" data-f="all" aria-pressed="true">All activities</button>
+        <button type="button" data-f="confidence" aria-pressed="false">Confidence</button>
+        <button type="button" data-f="speaking" aria-pressed="false">Public speaking</button>
+        <button type="button" data-f="debate" aria-pressed="false">Debate</button>
+      </div>
+      <div class="games" id="games"></div>
+      <p class="games-note" id="games-note"></p>
+    </div>
+  </section>
+
+  <section id="meeting">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">A chapter meeting</p>
+        <h2 class="h2">What 60 minutes looks like</h2>
+        <p class="lede">Chapters meet weekly or every other week. Each meeting follows the same rhythm so students know what's coming and can focus on getting better.</p>
+      </div>
+      <div class="meeting-bar" id="meeting-bar"></div>
+      <div class="scale" aria-hidden="true"><span>0 min</span><span>15</span><span>30</span><span>45</span><span>60</span></div>
+      <div class="meeting-detail" id="meeting-detail"></div>
+    </div>
+  </section>
+
+  <section id="path" class="path">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The skill path</p>
+        <h2 class="h2">Five levels from first words to full debate</h2>
+        <p class="lede">Students move up when they're ready, not by age. Each level ends with a challenge they complete in front of their chapter and a badge to show for it.</p>
+      </div>
+      <ol class="levels">
+        <li class="level">
+          <span class="num">Level 1</span>
+          <h3>Spark</h3>
+          <p>Get comfortable being seen and heard. Name games, voice warm-ups and 30-second talks about things you love.</p>
+          <span class="badge">Challenge: a 30-second “all about me” talk</span>
+        </li>
+        <li class="level">
+          <span class="num">Level 2</span>
+          <h3>Story</h3>
+          <p>Give a talk a shape: a beginning that hooks, a middle that makes sense and an ending people remember.</p>
+          <span class="badge">Challenge: a 2-minute personal story</span>
+        </li>
+        <li class="level">
+          <span class="num">Level 3</span>
+          <h3>Stage</h3>
+          <p>Use your voice and body on purpose: pace, pauses, gestures and eye contact that holds a room.</p>
+          <span class="badge">Challenge: a 3-minute persuasive speech</span>
+        </li>
+        <li class="level">
+          <span class="num">Level 4</span>
+          <h3>Spar</h3>
+          <p>Learn to argue well: claim, warrant and impact, plus rebuttals and respectful cross-examination.</p>
+          <span class="badge">Challenge: a full practice debate round</span>
+        </li>
+        <li class="level">
+          <span class="num">Level 5</span>
+          <h3>Showcase</h3>
+          <p>Bring it all together at a Future Voices showcase for families, schools and other chapters.</p>
+          <span class="badge">Challenge: speak or debate at the showcase</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="chapters">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Chapters</p>
+        <h2 class="h2">Bring Future Voices to your school or community</h2>
+        <p class="lede">A chapter is a local Future Voices club. It can meet at a school, library, community center or place of worship. Students run it, an adult supports it, and we give you everything you need to start.</p>
+      </div>
+
+      <div class="roles">
+        <article class="role">
+          <span class="who">Students</span>
+          <h3>Chapter lead</h3>
+          <p>A student who wants to start the club. You recruit members, run meetings with the playbook and help each other level up.</p>
+        </article>
+        <article class="role">
+          <span class="who">Adults</span>
+          <h3>Chapter advisor</h3>
+          <p>A teacher, coach, librarian or parent who supervises meetings and helps book a room. No speech or debate experience needed.</p>
+        </article>
+        <article class="role">
+          <span class="who">Feed the Monster</span>
+          <h3>Program team</h3>
+          <p>We train new leads, send the activity playbook, check in each month and connect chapters for showcases and friendly debates.</p>
+        </article>
+      </div>
+
+      <div class="start-grid" id="start">
+        <div>
+          <h3 class="h2" style="font-size:clamp(1.9rem,3.6vw,2.7rem)">Start a chapter in four steps</h3>
+          <ol class="steps" style="margin-top:28px">
+            <li><div><b>Apply</b><p>Fill in the form. It takes about five minutes. We reply within a week.</p></div></li>
+            <li><div><b>Find an advisor and a room</b><p>Ask a teacher or trusted adult to sponsor the chapter, and pick a regular time and place to meet.</p></div></li>
+            <li><div><b>Get trained</b><p>Join a short online kickoff call with the Future Voices team and get the chapter playbook.</p></div></li>
+            <li><div><b>Hold your first meeting</b><p>Invite at least five members and run the ready-made first meeting. Your chapter then appears in the directory.</p></div></li>
+          </ol>
+          <div class="kit">
+            <h3>Every new chapter gets</h3>
+            <ul>
+              <li>The activity playbook</li>
+              <li>A 12-week meeting plan</li>
+              <li>Topic and prompt cards</li>
+              <li>Skill path badges</li>
+              <li>Recruiting posters</li>
+              <li>Showcase invitations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h3>Apply to start a chapter</h3>
+          <p>Students, teachers and parents can all apply. Fields marked optional can be left blank.</p>
+          <form id="apply" novalidate>
+            <fieldset class="field">
+              <legend>I am a…</legend>
+              <div class="seg-pick">
+                <label><input type="radio" name="role" id="r-student" value="Student" checked><span>Student</span></label>
+                <label><input type="radio" name="role" id="r-teacher" value="Teacher or staff"><span>Teacher or staff</span></label>
+                <label><input type="radio" name="role" id="r-parent" value="Parent or community leader"><span>Parent or community leader</span></label>
+              </div>
+            </fieldset>
+            <div class="two">
+              <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="two">
+              <div class="field"><label for="f-org">School or organization</label><input id="f-org" name="organization" required></div>
+              <div class="field"><label for="f-city">City and state or country</label><input id="f-city" name="location" autocomplete="address-level2" required></div>
+            </div>
+            <div class="field">
+              <label for="f-ages">Who would join?</label>
+              <select id="f-ages" name="ages">
+                <option>Elementary school</option>
+                <option selected>Middle school</option>
+                <option>High school</option>
+                <option>Mixed ages</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-why">Why do you want a chapter? <span class="opt">(optional)</span></label>
+              <textarea id="f-why" name="why" rows="3" placeholder="Lots of kids at my school are scared to present in class."></textarea>
+            </div>
+            <p class="error" id="form-error" hidden></p>
+            <button class="btn voice" type="submit" id="submit">Send application</button>
+            <div class="done" id="form-done" hidden aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="directory" id="directory">
+        <div class="directory-head">
+          <h3>Chapter directory</h3>
+          <a class="btn small" href="#start">Add your chapter</a>
+        </div>
+        <ul class="chapter-list" id="chapter-list"></ul>
+        <div class="empty" id="chapter-empty" hidden>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c-10 0-18 8-18 18 0 13 18 32 18 32s18-19 18-32c0-10-8-18-18-18z" fill="var(--sun)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/><circle cx="32" cy="24" r="6.5" fill="var(--voice)" stroke="var(--ink)" stroke-width="2.5"/></svg>
+          <div>
+            <b>Founding chapters are forming now</b>
+            <p>Chapters appear here once they hold their first meeting. Start one and your school or community could be the first name on this list.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2 class="h2">Good questions, short answers</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Who is Future Voices for?</summary>
+          <p>Young people in elementary, middle and high school. Chapters can be one age group or mixed. The activities work for shy first-timers and for students who already love to talk.</p>
+        </details>
+        <details>
+          <summary>I get really nervous speaking. Is this for me?</summary>
+          <p>Yes. Most students start out nervous. Level 1 is built for that: short turns, small groups and games where nobody is judged. Confidence comes from lots of small, safe reps.</p>
+        </details>
+        <details>
+          <summary>Is this the same as a debate team?</summary>
+          <p>Not quite. Future Voices teaches debate, but it starts with confidence and everyday speaking. Students who want to compete will be ready for speech and debate tournaments after the Spar level.</p>
+        </details>
+        <details>
+          <summary>Does the adult advisor need debate experience?</summary>
+          <p>No. The playbook explains every activity step by step. The advisor's main job is to supervise, keep meetings safe and cheer students on.</p>
+        </details>
+        <details>
+          <summary>How many students do we need to start?</summary>
+          <p>Five is enough to run every activity. Many chapters start small and grow once friends see how fun the meetings are.</p>
+        </details>
+        <details>
+          <summary>What is Feed the Monster?</summary>
+          <p>Feed the Monster is the organization behind Future Voices. We run Future Voices, train chapter leads and connect chapters with each other.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 34 34" aria-hidden="true">
+        <path d="M4 6a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H14l-7 7v-7H8a4 4 0 0 1-4-4z" fill="var(--voice)" stroke="var(--on-deep)" stroke-width="2" stroke-linejoin="round"/>
+        <g stroke="var(--on-voice)" stroke-width="2.6" stroke-linecap="round"><path d="M11 11v4"/><path d="M15 8.5v9"/><path d="M19 10v6"/><path d="M23 12v2"/></g>
+      </svg>
+      <span><b>Future Voices</b><small>A Feed the Monster program</small></span>
+    </a>
+    <p>Helping young people find their voice, build their confidence and speak up for what they believe.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Content: edit these lists to update the site ---------- */
+
+  // Quick-debate topics shown in the hero card.
+  const TOPICS = [
+    "Kids should be allowed to pick one day a year to be the teacher.",
+    "Homework should be banned on weekends.",
+    "Dogs make better pets than cats.",
+    "Every school should have a nap room.",
+    "It's better to be really smart than really funny.",
+    "Summer break should be twice as long.",
+    "Pineapple belongs on pizza.",
+    "Video games should count as a sport.",
+    "Everyone should learn to cook before they turn 12.",
+    "School should start at 10 a.m.",
+    "It's better to live in the city than the countryside.",
+    "Zoos do more good than harm.",
+    "Phones should not be allowed at lunch.",
+    "Superheroes should have to follow the law.",
+    "Books are better than their movies.",
+    "Every kid should get to choose one class to skip."
+  ];
+
+  // Activities. skill: confidence | speaking | debate
+  const GAMES = [
+    { name: "Hot Seat", skill: "confidence", mins: 10, group: "Whole group", text: "One student sits in the hot seat and answers rapid, friendly questions for 60 seconds. No pausing to think too hard." },
+    { name: "Um Bucket", skill: "speaking", mins: 10, group: "Whole group", text: "Speak for one minute on a random topic. The group drops a token in the bucket for every “um” or “like”. Beat your own score." },
+    { name: "Silly Debates", skill: "debate", mins: 15, group: "Pairs", text: "Argue a ridiculous topic with total seriousness, like whether socks should be sold in threes. Claim, reason, example." },
+    { name: "Story Chain", skill: "confidence", mins: 10, group: "Circle", text: "Each person adds one sentence to a shared story. Nobody can plan ahead, so everyone learns to roll with it." },
+    { name: "Mirror Me", skill: "speaking", mins: 8, group: "Pairs", text: "One partner gives a short talk while the other mirrors their gestures. Then they swap and talk about which moves worked." },
+    { name: "Commercial Break", skill: "speaking", mins: 15, group: "Small teams", text: "Teams invent a product and pitch it in a 45-second ad. Practices hooks, persuasion and selling it with energy." },
+    { name: "Crossfire Tag", skill: "debate", mins: 15, group: "Teams of 3", text: "Two speakers give opening points, then tag in a teammate to ask and answer questions. Teaches listening and quick responses." },
+    { name: "Two-Minute Expert", skill: "speaking", mins: 12, group: "Whole group", text: "Teach the group something you know well, from card tricks to cloud types, in exactly two minutes." },
+    { name: "Power Pose Walk", skill: "confidence", mins: 5, group: "Whole group", text: "Walk to the front, plant your feet, look up and say your name like you mean it. The group cheers every single time." },
+    { name: "Four Corners", skill: "debate", mins: 15, group: "Whole group", text: "Read a statement. Students move to Agree, Disagree, Not sure or It depends, then each corner explains their choice." },
+    { name: "Yes, And", skill: "confidence", mins: 8, group: "Pairs", text: "Partners build a scene where every line starts with “Yes, and…”. Teaches listening and building on someone else's idea." },
+    { name: "Rebuttal Relay", skill: "debate", mins: 12, group: "Two lines", text: "One side makes a point and the other side gets 20 seconds to answer it. Keep the relay going until every student has spoken." }
+  ];
+  const SKILL_LABEL = { confidence: "Confidence", speaking: "Public speaking", debate: "Debate" };
+
+  // A 60-minute meeting. Segments are drawn to scale by minutes.
+  const MEETING = [
+    { name: "Warm-up", mins: 8, cls: "s1", text: "Voice and body warm-ups, then a quick confidence game to get everyone talking." },
+    { name: "Skill lesson", mins: 12, cls: "s2", text: "A short lesson on one skill from the current level, with a live example." },
+    { name: "Game time", mins: 20, cls: "s3", text: "One or two activities that put the lesson into practice in pairs or teams." },
+    { name: "Spotlight", mins: 15, cls: "s4", text: "Volunteers give a speech or debate in front of the chapter and get feedback." },
+    { name: "Shout-outs", mins: 5, cls: "s5", text: "Celebrate wins, hand out badges and preview next meeting's topic." }
+  ];
+
+  // Chapter directory. Add a chapter once it has held its first meeting, e.g.
+  // { name: "Lincoln Middle School", place: "Austin, TX", since: "Fall 2026" }
+  const CHAPTERS = [];
+
+  // To receive chapter applications, set FORM_ENDPOINT to a form service URL
+  // (Formspree, a Google Apps Script web app, etc.). It receives a JSON POST.
+  const FORM_ENDPOINT = "";
+
+  /* ---------- Ticker ---------- */
+  const lines = [
+    "Find your voice", "Speak up", "Stand tall", "Argue kindly", "Listen first",
+    "Make your point", "Shake off the nerves", "Claim · Warrant · Impact", "Be heard"
+  ];
+  const run = lines.map(l => `<span>${l}</span>`).join("");
+  document.getElementById("ticker").innerHTML = run + run;
+
+  /* ---------- Quick debate card ---------- */
+  const topicEl = document.getElementById("topic");
+  const sideEl = document.getElementById("side");
+  const goBtn = document.getElementById("go");
+  const spinBtn = document.getElementById("spin");
+  const ringFill = document.getElementById("ring-fill");
+  const ringText = document.getElementById("ring-text");
+  const tip = document.getElementById("clock-tip");
+  const C = 2 * Math.PI * 31;
+  ringFill.style.strokeDasharray = C;
+  const TOTAL = 60;
+  let topicIdx = 0, timer = null, endAt = 0, side = "for";
+
+  const fmt = s => `0:${String(s).padStart(2, "0")}`;
+  const drawRing = left => {
+    ringFill.style.strokeDashoffset = C * (1 - left / TOTAL);
+    ringText.textContent = left === TOTAL ? "1:00" : fmt(left);
+  };
+  const setTip = (title, body) => { tip.innerHTML = `<b>${title}</b>${body}`; };
+  const stop = () => { clearInterval(timer); timer = null; goBtn.textContent = "Start 60 seconds"; };
+  const resetClock = () => {
+    stop(); drawRing(TOTAL);
+    setTip("You get 60 seconds.", "Give one reason and one example. Finish with “That's why…”.");
+  };
+
+  spinBtn.addEventListener("click", () => {
+    let next;
+    do { next = Math.floor(Math.random() * TOPICS.length); } while (next === topicIdx && TOPICS.length > 1);
+    topicIdx = next;
+    side = Math.random() < .5 ? "for" : "against";
+    topicEl.textContent = TOPICS[topicIdx];
+    sideEl.textContent = side === "for" ? "Argue for" : "Argue against";
+    sideEl.classList.toggle("against", side === "against");
+    if (!reduce) { topicEl.classList.remove("flip"); void topicEl.offsetWidth; topicEl.classList.add("flip"); }
+    resetClock();
+  });
+
+  goBtn.addEventListener("click", () => {
+    if (timer) { resetClock(); return; }
+    endAt = Date.now() + TOTAL * 1000;
+    goBtn.textContent = "Stop";
+    setTip("Go!", "Speak until the ring runs out.");
+    const tick = () => {
+      const left = Math.max(0, Math.ceil((endAt - Date.now()) / 1000));
+      drawRing(left);
+      if (left === 30) setTip("Halfway.", "Time for your example.");
+      if (left === 10) setTip("10 seconds.", "Wrap it up: “That's why…”.");
+      if (left === 0) {
+        stop();
+        setTip("Time! Nice work.", "Now swap sides, or tap New topic.");
+      }
+    };
+    tick();
+    timer = setInterval(tick, 250);
+  });
+  drawRing(TOTAL);
+
+  /* ---------- Activities ---------- */
+  const icon = {
+    clock: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>',
+    group: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="6" cy="5.5" r="2.5"/><path d="M1.5 14c.5-2.6 2.2-4 4.5-4s4 1.4 4.5 4"/><path d="M10.5 3.2a2.5 2.5 0 0 1 0 4.6M12 10.3c1.4.5 2.2 1.8 2.5 3.7"/></svg>'
+  };
+  const gamesEl = document.getElementById("games");
+  const note = document.getElementById("games-note");
+  const renderGames = f => {
+    const list = f === "all" ? GAMES : GAMES.filter(g => g.skill === f);
+    gamesEl.innerHTML = list.map(g => `
+      <article class="game">
+        <header><span class="chip ${g.skill}">${SKILL_LABEL[g.skill]}</span></header>
+        <h3>${g.name}</h3>
+        <p>${g.text}</p>
+        <footer><span>${icon.clock}${g.mins} min</span><span>${icon.group}${g.group}</span></footer>
+      </article>`).join("");
+    note.textContent = `Showing ${list.length} of ${GAMES.length} activities.`;
+  };
+  document.getElementById("filters").addEventListener("click", e => {
+    const b = e.target.closest("button[data-f]");
+    if (!b) return;
+    document.querySelectorAll("#filters button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    renderGames(b.dataset.f);
+  });
+  renderGames("all");
+
+  /* ---------- Meeting ---------- */
+  let t = 0;
+  document.getElementById("meeting-bar").innerHTML = MEETING.map(m => {
+    const from = t; t += m.mins;
+    return `<div class="seg ${m.cls}" style="flex:${m.mins} 1 0"><b>${m.name}</b><small>${from}–${t} min</small></div>`;
+  }).join("");
+  document.getElementById("meeting-detail").innerHTML = MEETING.map(m =>
+    `<div><span class="chip">${m.mins} min</span><b>${m.name}</b><p>${m.text}</p></div>`).join("");
+
+  /* ---------- Directory ---------- */
+  const listEl = document.getElementById("chapter-list");
+  if (CHAPTERS.length) {
+    listEl.innerHTML = CHAPTERS.map(c =>
+      `<li class="chapter"><b>${c.name}</b><span>${c.place}${c.since ? " · since " + c.since : ""}</span></li>`).join("");
+  } else {
+    listEl.hidden = true;
+    document.getElementById("chapter-empty").hidden = false;
+  }
+
+  /* ---------- Application form ---------- */
+  const form = document.getElementById("apply");
+  const err = document.getElementById("form-error");
+  const done = document.getElementById("form-done");
+  const submit = document.getElementById("submit");
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    err.hidden = true;
+    const data = Object.fromEntries(new FormData(form));
+    const missing = [];
+    if (!data.name.trim()) missing.push("your name");
+    if (!/^\S+@\S+\.\S+$/.test(data.email.trim())) missing.push("a valid email");
+    if (!data.organization.trim()) missing.push("your school or organization");
+    if (!data.location.trim()) missing.push("your city");
+    if (missing.length) {
+      err.textContent = `Please add ${missing.join(", ")}.`;
+      err.hidden = false;
+      return;
+    }
+    const first = data.name.trim().split(/\s+/)[0];
+    if (!FORM_ENDPOINT) {
+      done.textContent = `Thanks, ${first}! Applications aren't connected yet, so nothing was sent. Once the site owner connects the form, applications will go straight to the Future Voices team.`;
+      done.hidden = false;
+      return;
+    }
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+      if (!res.ok) throw new Error(res.status);
+      form.querySelectorAll("input:not([type=radio]), select, textarea, button").forEach(el => el.disabled = true);
+      done.textContent = `Thanks, ${first}! Your application for ${data.organization.trim()} is in. We'll email you within a week about next steps.`;
+      done.hidden = false;
+      submit.textContent = "Sent";
+    } catch {
+      err.textContent = "Your application didn't go through. Check your connection and try again.";
+      err.hidden = false;
+      submit.disabled = false;
+      submit.textContent = "Send application";
+    }
+  });
+})();
+</script>
+</body>
+</html>
