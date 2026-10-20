@@ -7,9 +7,10 @@ It's a single self-contained page: open `index.html` in a browser, or host it an
 
 ## What's on it
 
-- **Hero voice meter**: the letters of "Future Voices" pulse like a voice meter. Hover over them, or press
-  and hold to "project". Click **Test your voice** to drive the meter from your microphone (audio stays in
-  the browser; mic access needs the page served over HTTPS or from localhost).
+- **Hero**: headline, sign-up call to action, and a voice meter card. Click **Test your voice** to drive
+  the meter from your microphone (audio stays in the browser; mic access needs the page served over HTTPS
+  or from localhost).
+- **Program**: three pillars (research, argument, delivery).
 - **Find your event**: nine events (debate, speech, interp). Pick one to see its round drawn to a shared
   80-minute scale, then press **Play the round** to watch a playhead run through it. Filter by category.
 - **Practice Room**: an impromptu prompt deck (filter by quotation, word, object, question) and a speech
@@ -22,7 +23,7 @@ It's a single self-contained page: open `index.html` in a browser, or host it an
 
 The three photos were generated with Higgsfield AI and are loaded from Higgsfield's image host
 (`d8j0ntlcm91z4.cloudfront.net`). To host them yourself, download them into the repo and change the three
-`src` URLs in `index.html`. If a photo fails to load, the page falls back to a dark gradient.
+`src` URLs in `index.html`. If a photo fails to load, the page falls back to a plain background.
 
 ## Connecting the sign-up form
 
@@ -32,5 +33,11 @@ form-service URL (Formspree, a Google Apps Script web app, etc.). It receives a 
 
 ## Editing content
 
-Events, impromptu prompts, speech clock presets, glossary terms, and the ticker lines are plain arrays in
-the `<script>` block (`EVENTS`, `PROMPTS`, `PRESETS`, `TERMS`, `lines`).
+Events, impromptu prompts, speech clock presets, and glossary terms are plain arrays in the `<script>`
+block (`EVENTS`, `PROMPTS`, `PRESETS`, `TERMS`).
+
+## Design
+
+Editorial, Swiss-style look: warm paper background, ink text, one crimson accent (`--accent`), Newsreader
+serif headings with Inter for body text. Colors and fonts are CSS variables at the top of the `<style>`
+block. Respects reduced-motion settings and stays usable from 375px phones up.
